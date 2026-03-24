@@ -1,0 +1,235 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Catálogo de fuentes “reales” */
+  --font-open-sans: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-roboto: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-montserrat: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-dancing: 'Dancing Script', 'Helvetica Neue', Arial, sans-serif;
+  --font-fira-code: 'Fira Code', monospace;
+  --font-source-code-pro: 'Source Code Pro', sans-serif;
+  --font-material-symbols: 'Material Symbols Outlined', sans-serif;
+
+  /* Variables semánticas que referencian al catálogo anterior */
+  /*
+    font-main: pensada para la fuente principal o por defecto del sitio.
+    font-heading: pensada para títulos (h1, h2, etc.) o encabezados.
+    font-body: para el texto principal del contenido (párrafos, descripciones breves).
+    font-caption o font-small: para textos pequeños (legendas, disclaimers, tooltips).
+    font-accent: si tienes textos destacados, citas, o cierto highlight.
+    font-code: si incluyes bloques de código o texto monoespaciado. */
+  --font-main: var(--font-open-sans);
+  --font-heading: var(--font-open-sans);
+  --font-body: var(--font-open-sans);
+  --font-caption: var(--font-montserrat);
+  --font-accent: var(--font-dancing);
+  --font-code: var(--font-fira-code);
+
+    /* Colors  ebf
+    --brand-color-1: #80bc00;
+    --brand-color-2: #0f298f;
+    --brand-color-3: #fde234;
+    --brand-color-4: #000000;
+    --brand-color-5: #ffffff; */
+
+  /* Colors BIDLab*/
+  --brand-color-1: #004e70;
+  --brand-color-2: #db4569;
+  --brand-color-3: #004e70;
+  --brand-color-4: #3d967a;
+  --brand-color-5: #faad17;
+  --brand-color-6: #4522ac;
+
+  --color-primary-950: color-mix(in srgb, var(--brand-color-1) 10%, black 90%);
+  --color-primary-900: color-mix(in srgb, var(--brand-color-1) 30%, black 80%);
+  --color-primary-800: color-mix(in srgb, var(--brand-color-1) 40%, black 60%);
+  --color-primary-700: color-mix(in srgb, var(--brand-color-1) 60%, black 40%);
+  --color-primary-600: color-mix(in srgb, var(--brand-color-1) 80%, black 20%);
+  --color-primary-500: var(--brand-color-1);
+  --color-primary: var(--brand-color-1);
+  --color-primary-400: color-mix(in srgb, var(--brand-color-1) 80%, white 20%);
+  --color-primary-300: color-mix(in srgb, var(--brand-color-1) 60%, white 40%);
+  --color-primary-200: color-mix(in srgb, var(--brand-color-1) 40%, white 60%);
+  --color-primary-100: color-mix(in srgb, var(--brand-color-1) 20%, white 80%);
+  --color-primary-50: color-mix(in srgb, var(--brand-color-1) 10%, white 90%);
+
+  --color-secondary-950: color-mix(in srgb, var(--brand-color-2) 10%, black 90%);
+  --color-secondary-900: color-mix(in srgb, var(--brand-color-2) 20%, black 80%);
+  --color-secondary-800: color-mix(in srgb, var(--brand-color-2) 40%, black 60%);
+  --color-secondary-700: color-mix(in srgb, var(--brand-color-2) 60%, black 40%);
+  --color-secondary-600: color-mix(in srgb, var(--brand-color-2) 80%, black 20%);
+  --color-secondary-500: var(--brand-color-2);
+  --color-secondary: var(--brand-color-2);
+  --color-secondary-400: color-mix(in srgb, var(--brand-color-2) 80%, white 20%);
+  --color-secondary-300: color-mix(in srgb, var(--brand-color-2) 60%, white 40%);
+  --color-secondary-200: color-mix(in srgb, var(--brand-color-2) 40%, white 60%);
+  --color-secondary-100: color-mix(in srgb, var(--brand-color-2) 20%, white 80%);
+  --color-secondary-50: color-mix(in srgb, var(--brand-color-2) 10%, white 90%);
+
+  --color-blue-950: color-mix(in srgb, var(--brand-color-3) 10%, black 90%);
+  --color-blue-900: color-mix(in srgb, var(--brand-color-3) 20%, black 80%);
+  --color-blue-800: color-mix(in srgb, var(--brand-color-3) 40%, black 60%);
+  --color-blue-700: color-mix(in srgb, var(--brand-color-3) 60%, black 40%);
+  --color-blue-600: color-mix(in srgb, var(--brand-color-3) 80%, black 20%);
+  --color-blue-500: var(--brand-color-3);
+  --color-blue: var(--brand-color-3);
+  --color-blue-400: color-mix(in srgb, var(--brand-color-3) 80%, white 20%);
+  --color-blue-300: color-mix(in srgb, var(--brand-color-3) 60%, white 40%);
+  --color-blue-200: color-mix(in srgb, var(--brand-color-3) 40%, white 60%);
+  --color-blue-100: color-mix(in srgb, var(--brand-color-3) 20%, white 80%);
+  --color-blue-50: color-mix(in srgb, var(--brand-color-3) 10%, white 90%);
+
+  --color-green-950: color-mix(in srgb, var(--brand-color-4) 10%, black 90%);
+  --color-green-900: color-mix(in srgb, var(--brand-color-4) 20%, black 80%);
+  --color-green-800: color-mix(in srgb, var(--brand-color-4) 40%, black 60%);
+  --color-green-700: color-mix(in srgb, var(--brand-color-4) 60%, black 40%);
+  --color-green-600: color-mix(in srgb, var(--brand-color-4) 80%, black 20%);
+  --color-green-500: var(--brand-color-4);
+  --color-green: var(--brand-color-4);
+  --color-green-400: color-mix(in srgb, var(--brand-color-4) 80%, white 20%);
+  --color-green-300: color-mix(in srgb, var(--brand-color-4) 60%, white 40%);
+  --color-green-200: color-mix(in srgb, var(--brand-color-4) 40%, white 60%);
+  --color-green-100: color-mix(in srgb, var(--brand-color-4) 20%, white 80%);
+  --color-green-50: color-mix(in srgb, var(--brand-color-4) 10%, white 90%);
+
+  --color-yellow-950: color-mix(in srgb, var(--brand-color-5) 10%, black 90%);
+  --color-yellow-900: color-mix(in srgb, var(--brand-color-5) 20%, black 80%);
+  --color-yellow-800: color-mix(in srgb, var(--brand-color-5) 40%, black 60%);
+  --color-yellow-700: color-mix(in srgb, var(--brand-color-5) 60%, black 40%);
+  --color-yellow-600: color-mix(in srgb, var(--brand-color-5) 80%, black 20%);
+  --color-yellow-500: var(--brand-color-5);
+  --color-yellow: var(--brand-color-5);
+  --color-yellow-400: color-mix(in srgb, var(--brand-color-5) 80%, white 20%);
+  --color-yellow-300: color-mix(in srgb, var(--brand-color-5) 60%, white 40%);
+  --color-yellow-200: color-mix(in srgb, var(--brand-color-5) 40%, white 60%);
+  --color-yellow-100: color-mix(in srgb, var(--brand-color-5) 20%, white 80%);
+  --color-yellow-50: color-mix(in srgb, var(--brand-color-5) 10%, white 90%);
+
+  --color-purple-950: color-mix(in srgb, var(--brand-color-6) 10%, black 90%);
+  --color-purple-900: color-mix(in srgb, var(--brand-color-6) 20%, black 80%);
+  --color-purple-800: color-mix(in srgb, var(--brand-color-6) 40%, black 60%);
+  --color-purple-700: color-mix(in srgb, var(--brand-color-6) 60%, black 40%);
+  --color-purple-600: color-mix(in srgb, var(--brand-color-6) 80%, black 20%);
+  --color-purple-500: var(--brand-color-6);
+  --color-purple: var(--brand-color-6);
+  --color-purple-400: color-mix(in srgb, var(--brand-color-6) 80%, white 20%);
+  --color-purple-300: color-mix(in srgb, var(--brand-color-6) 60%, white 40%);
+  --color-purple-200: color-mix(in srgb, var(--brand-color-6) 40%, white 60%);
+  --color-purple-100: color-mix(in srgb, var(--brand-color-6) 20%, white 80%);
+  --color-purple-50: color-mix(in srgb, var(--brand-color-6) 10%, white 90%);
+
+  --color-blue-darken-1: #002738;
+  --color-blue-darken-2: #003e5a;
+  --color-blue-main: #004e70;
+  --color-blue: #004e70;
+  --color-blue-lighten-1: #33718d;
+  --color-blue-lighten-2: #80a7b8;
+
+  --color-magenta-darken-1: #af3854;
+  --color-magenta-darken-2: #af3754;
+  --color-magenta-main: #db4569;
+  --color-magenta: #db4569;
+  --color-magenta-lighten-1: #e26a87;
+  --color-magenta-lighten-2: #eda2b4;
+  --color-magenta-lighten-3: #f8dae1;
+
+  --color-green-darken-1: #1f4b3d;
+  --color-green-darken-2: #317862;
+  --color-green: #3d967a;
+  --color-green-lighten-1: #64ab95;
+  --color-green-lighten-2: #9ecbbd;
+
+  --color-yellow-darken-1: #7d570c;
+  --color-yellow-darken-2: #c88a12;
+  --color-yellow: #faad17;
+  --color-yellow-lighten-1: #fbbd45;
+  --color-yellow-lighten-2: #fdd68b;
+
+  --color-purple-darken-2: #361b88;
+  --color-purple: #4522ac;
+  --color-gray-lighten-1: #d8d9dd;
+  --color-gray-light: #f9fafb;
+  --color-gray-dark: #3b3b3d;
+
+  --tw-shadow-color: rgba(0, 0, 0, 0.4);
+  --footer-background: oklch(0.29 0 0);
+  --header-background: oklch(98.5% 0.002 247.839);
+
+  /* Gradients */
+  --color-gradient-get-2025: linear-gradient(45deg, #009ADE, #FF5100, #DB4569);
+
+  /* --bg-success: var(--color-sky-200);
+  --color-warning-500: oklch(57.7% 0.245 27.325);
+  --color-danger: oklch(63.7% 0.237 25.331);
+  --color-info: oklch(72.3% 0.219 149.579); */
+
+  /* Breakpoints */
+  --breakpoint-2xs: 20rem;
+
+  /* Container */
+  --container-8xl: 96rem;
+
+  /* Colors GET FORUM */
+  --color-pillar-blue: #0090d6;
+  --color-pillar-orange: #ff481e;
+  --color-pillar-pink: #ff205b;
+
+
+  /* Colors CARIBEquity */
+  --color-caribe-yellow: #f0a91e;
+  --color-caribe-blue: #3fbfd1;
+  --color-caribe-green: #2f9877;
+  --color-caribe-red: #e1523b;
+
+  /* Colors Error */
+  --color-error: #e1523b;
+  --color-error-border: #e1523b;
+  --color-error-background: #fecaca;
+
+}
+
+@layer base {
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+  .text-blue {
+    color: var(--color-blue);
+  }
+  .text-green {
+    color: var(--color-green);
+  }
+  .text-yellow {
+    color: var(--color-yellow);
+  }
+  .text-purple {
+    color: var(--color-purple);
+  }
+  .text-magenta {
+    color: var(--color-magenta);
+  }
+  .text-pillar-blue {
+    color: var(--color-pillar-blue);
+  }
+  .text-pillar-orange {
+    color: var(--color-pillar-orange);
+  }
+  .text-pillar-pink {
+    color: var(--color-pillar-pink);
+  }
+  .text-caribe-yellow {
+    color: var(--color-caribe-yellow);
+  }
+  .text-caribe-blue {
+    color: var(--color-caribe-blue);
+  }
+  .text-caribe-green {
+    color: var(--color-caribe-green);
+  }
+  .text-caribe-red {
+    color: var(--color-caribe-red);
+  }
+}

@@ -1,0 +1,34 @@
+.skeleton {
+  @apply mb-3 relative bg-neutral-200 rounded-2xl overflow-hidden;
+  
+  &::after {
+    animation: loading 1.7s infinite;
+    @apply block content-[""] absolute w-full h-full translate-x-[-100%] bg-stone-50;
+  }
+
+  &.card-title {
+    @apply min-w-full;
+  }
+
+  &.card-location,
+  &.card-type,
+  &.card-date,
+  &.card-header-case {
+    @apply min-w-[20%];
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
