@@ -97,6 +97,9 @@ watch(COMPONENTS_DIR, { recursive: true }, async (eventType, filename) => {
   if (isProcessingFile) return;
   isProcessingFile = true;
 
+  // Ignorar archivos en la carpeta styles/ (excepto input.css para global)
+  const isInStylesFolder = filename.startsWith("styles/") || filename.startsWith("styles\\");
+
   // CSS global (input.css)
   if (filename.includes("input.css")) {
     console.log(`\n🔄 Cambio detectado en estilos globales`);
@@ -105,11 +108,15 @@ watch(COMPONENTS_DIR, { recursive: true }, async (eventType, filename) => {
     return;
   }
 
-  // CSS de componentes
-  if (!filename.includes("theme-only.css")) {
-    const pathFileModified = join(COMPONENTS_DIR, filename);
-    const pathFileOutput = join(COMPONENTS_DIR, filename, "../");
-    console.log(`\n🔄 Cambio detectado en: ${filename}`);
-    await processTailwindToLit(pathFileModified, pathFileOutput);
+  // Ignorar otros archivos en styles/
+  if (isInStylesFolder) {
+    isProcessingFile = false;
+    return;
   }
+
+  // CSS de componentes (archivos cp-*.css)
+  const pathFileModified = join(COMPONENTS_DIR, filename);
+  const pathFileOutput = join(COMPONENTS_DIR, filename, "../");
+  console.log(`\n🔄 Cambio detectado en: ${filename}`);
+  await processTailwindToLit(pathFileModified, pathFileOutput);
 });

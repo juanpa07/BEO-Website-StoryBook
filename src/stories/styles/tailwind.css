@@ -190,14 +190,8 @@
   .static {
     position: static;
   }
-  .contents {
-    display: contents;
-  }
   .flex {
     display: flex;
-  }
-  .inline-block {
-    display: inline-block;
   }
   .flex-grow {
     flex-grow: 1;
