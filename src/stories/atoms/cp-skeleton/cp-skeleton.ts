@@ -8,11 +8,11 @@ import componentStyles from "./cp-skeleton.lit";
 export class CpSkeleton extends LitElement implements SkeletonProperties {
   static styles: CSSResultGroup = [componentStyles];
 
-  @property({ type: String }) width: string = "w-1/2";
-  @property({ type: String }) height: string = "h-10";
+  @property({ type: String }) width: string = "50%";
+  @property({ type: String }) height: string = "2.5rem";
 
   render(): TemplateResult {
-    return html`<div class="skeleton ${this.height} ${this.width}"></div>`;
+    return html`<div class="skeleton" style="width: ${this.width}; height: ${this.height};"></div>`;
   }
 }
 

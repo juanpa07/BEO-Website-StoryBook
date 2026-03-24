@@ -26,3 +26,7 @@ dist-ssr
 *storybook.log
 storybook-static
 .temp-tailwind
+
+# Generated CSS files
+src/stories/styles/tailwind.css
+**/*.lit.ts

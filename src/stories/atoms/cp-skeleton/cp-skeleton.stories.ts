@@ -11,14 +11,14 @@ const meta: Meta = {
   component: "cp-skeleton",
   argTypes: {
     width: {
-      description: "Attribute to specify the width color",
+      description: "Width of the skeleton (CSS value)",
       control: { type: "select" },
-      options: ["w-full", "w-3/4", "w-2/3", "w-1/2", "w-1/3", "w-1/5"],
+      options: ["100%", "75%", "66%", "50%", "33%", "20%"],
     },
     height: {
-      description: "Attribute to specify the width color",
+      description: "Height of the skeleton (CSS value)",
       control: { type: "select" },
-      options: ["h-8", "h-10", "h-12", "h-24", "h-32", "h-40"],
+      options: ["2rem", "2.5rem", "3rem", "6rem", "8rem", "10rem"],
     },
   },
 };
@@ -37,16 +37,16 @@ const Template = (args: SkeletonArgs) => html`
 
 export const fullSkeleton: Story = {
   args: {
-    width: "w-full",
-    height: "h-10"
+    width: "100%",
+    height: "2.5rem"
   },
   render: Template,
 };
 
 export const halfSkeleton: Story = {
   args: {
-    width: "w-1/2",
-    height: "h-40"
+    width: "50%",
+    height: "10rem"
   },
   render: Template,
 };

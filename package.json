@@ -10,6 +10,7 @@
     "storybook": "npx concurrently 'npm:watch:*'",
     "watch:storybook": "storybook dev -p 6008",
     "watch:tailwindStories": "node ./src/utils/tailwind-watch.mjs",
+    "watch:tailwindGlobal": "npx tailwindcss -i ./src/stories/styles/input.css -o ./src/stories/styles/tailwind.css --watch",
     "build-storybook": "storybook build"
   },
   "dependencies": {
