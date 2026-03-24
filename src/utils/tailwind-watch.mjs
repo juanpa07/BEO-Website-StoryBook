@@ -9,9 +9,27 @@ const __dirname = dirname(__filename);
 
 // Directorios
 const COMPONENTS_DIR = join(__dirname, "..", "stories");
-const INPUT_CSS_PATH = join(__dirname, "..", "stories", "styles", "input.css");
+const STYLES_DIR = join(__dirname, "..", "stories", "styles");
+const INPUT_CSS_PATH = join(STYLES_DIR, "input.css");
+const GLOBAL_CSS_OUTPUT = join(STYLES_DIR, "tailwind.css");
 
 let isProcessingFile = false;
+
+/**
+ * Procesa el CSS global de Tailwind (input.css -> tailwind.css)
+ */
+async function processGlobalCss() {
+  try {
+    const inputCss = readFileSync(INPUT_CSS_PATH, "utf8");
+    const result = await postcss([tailwindcss()]).process(inputCss, {
+      from: INPUT_CSS_PATH,
+    });
+    writeFileSync(GLOBAL_CSS_OUTPUT, result.css, "utf8");
+    console.log(`✅ Global CSS generado: tailwind.css`);
+  } catch (error) {
+    console.error(`❌ Error al procesar CSS global:`, error.message || error);
+  }
+}
 
 /**
  * Procesa un archivo CSS de componente con Tailwind y genera el archivo .lit.ts
@@ -64,23 +82,33 @@ ${componentStyles}
   }
 }
 
+// Procesar CSS global inicialmente
+console.log("🚀 Procesando CSS global...");
+await processGlobalCss();
+
 // Activar `watch` para detectar cambios en los archivos CSS
-console.log("👀 Observando cambios en los componentes...");
+console.log("👀 Observando cambios en componentes y estilos globales...");
 
 watch(COMPONENTS_DIR, { recursive: true }, async (eventType, filename) => {
-  if (
-    filename &&
-    filename.endsWith(".css") &&
-    !filename.includes(".lit.ts") &&
-    !filename.includes("input.css") &&
-    !filename.includes("theme-only.css")
-  ) {
+  if (!filename || !filename.endsWith(".css") || filename.includes(".lit.ts")) {
+    return;
+  }
+
+  if (isProcessingFile) return;
+  isProcessingFile = true;
+
+  // CSS global (input.css)
+  if (filename.includes("input.css")) {
+    console.log(`\n🔄 Cambio detectado en estilos globales`);
+    await processGlobalCss();
+    isProcessingFile = false;
+    return;
+  }
+
+  // CSS de componentes
+  if (!filename.includes("theme-only.css")) {
     const pathFileModified = join(COMPONENTS_DIR, filename);
     const pathFileOutput = join(COMPONENTS_DIR, filename, "../");
-
-    if (isProcessingFile) return;
-    isProcessingFile = true;
-
     console.log(`\n🔄 Cambio detectado en: ${filename}`);
     await processTailwindToLit(pathFileModified, pathFileOutput);
   }

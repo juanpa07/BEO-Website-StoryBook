@@ -1,7 +1,6 @@
 import type { StorybookConfig } from '@storybook/web-components-vite';
 import { mergeConfig } from 'vite';
 import { fileURLToPath, URL } from 'url';
-import tailwindcss from '@tailwindcss/vite';
 
 const config: StorybookConfig = {
   "stories": [
@@ -17,7 +16,6 @@ const config: StorybookConfig = {
   "framework": "@storybook/web-components-vite",
   async viteFinal(config) {
     return mergeConfig(config, {
-      plugins: [tailwindcss()],
       resolve: {
         alias: {
           '@helper': fileURLToPath(new URL('../src/helper', import.meta.url)),
