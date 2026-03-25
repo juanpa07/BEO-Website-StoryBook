@@ -35,18 +35,27 @@
   @apply flex items-center flex-nowrap gap-2;
 }
 
-.link--span idblabext-icon {
+.link--span cc-icon {
   @apply text-shadow-sm;
 }
 /* ===================== */
 /* === Icon Position === */
 /* ===================== */
 
-.link--icon-right idblabext-icon {
+.link--icon-right cc-icon {
+  @apply order-2;
+}
+.link--icon-right span,
+.link--icon-right ::slotted(span) {
   @apply order-1;
 }
-.link--icon-left idblabext-icon {
-  @apply -order-1;
+
+.link--icon-left cc-icon {
+  @apply order-1;
+}
+.link--icon-left span,
+.link--icon-left ::slotted(span) {
+  @apply order-2;
 }
 
 /* ====== */

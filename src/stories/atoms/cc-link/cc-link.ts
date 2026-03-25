@@ -74,7 +74,7 @@ export class CcLink extends LitElement implements LinkProperties {
           .size=${this.iconProps.size ?? "small"}
           .color=${this.iconProps.color ?? ""}
         ></cc-icon>
-        ${this.label ? unsafeHTML(this.label) : ''}
+        ${this.label ? html`<span class="link__label">${unsafeHTML(this.label)}</span>` : ''}
       </span>
     `;
   }

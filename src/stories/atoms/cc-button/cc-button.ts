@@ -54,12 +54,12 @@ export class CcButton extends LitElement implements ButtonProperties {
 
     return html`
       <span class="button--span button--icon-${this.iconProps.position ?? 'right'}">
-        <idblabext-icon
+        <cc-icon
           .library=${this.iconProps.library ?? "material"}
           .name=${this.iconProps.name}
           .size=${this.iconProps.size ?? "small"}
           .color=${this.iconProps.color ?? ""}
-        ></idblabext-icon>
+        ></cc-icon>
         ${this.label ? html`${this.label}` : ''}
       </span>
     `;

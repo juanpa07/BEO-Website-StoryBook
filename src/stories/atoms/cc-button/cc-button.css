@@ -11,7 +11,7 @@
   @apply flex items-center flex-nowrap gap-2;
 }
 
-.button--span idblabext-icon{
+.button--span cc-icon{
   @apply text-shadow-sm;
 }
 
@@ -160,9 +160,9 @@
 /* === Icon Position === */
 /* ===================== */
 
-.button--icon-right idblabext-icon{
+.button--icon-right cc-icon{
   @apply order-1;
 }
-.button--icon-left idblabext-icon{
+.button--icon-left cc-icon{
   @apply -order-1;
 }
