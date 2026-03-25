@@ -1,9 +1,9 @@
-// artifacts/storybook/ebfactory/src/stories/atoms/cp-icons/cp-icon.stories.ts
+// artifacts/storybook/ebfactory/src/stories/atoms/cc-icons/cc-icon.stories.ts
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './cp-icon'; // Importa tu componente de icono
-import '../cp-button/cp-button'
-import '../cp-link/cp-link'
+import './cc-icon'; // Importa tu componente de icono
+import '../cc-button/cc-button'
+import '../cc-link/cc-link'
 
 // Asumo una interfaz para las propiedades del icono si la tienes
 import type { IconProperties } from '@interfaces/icon.interface';
@@ -12,7 +12,7 @@ type IconArgs = Partial<IconProperties>;
 
 const meta: Meta<IconArgs> = {
   title: 'Atoms/Icon',
-  component: 'cp-icon',
+  component: 'cc-icon',
   tags: ['autodocs'],
   argTypes: {
     name: {
@@ -54,7 +54,7 @@ const meta: Meta<IconArgs> = {
     }
   },
   render: (args) => html`
-    <cp-icon
+    <cc-icon
       .name=${args.name ?? ''}
       .library=${args.library ?? 'material'}
       .size=${args.size ?? ''}
@@ -62,7 +62,7 @@ const meta: Meta<IconArgs> = {
       .fill=${args.fill ?? 0}
       .weight=${args.weight ?? 400}
       .grade=${args.grade ?? 0}
-    ></cp-icon>
+    ></cc-icon>
   `,
 };
 
@@ -121,11 +121,11 @@ export const CustomWeightAndGrade: Story = {
 export const DifferentSizes: Story = {
   render: () => html`
     <div style="display: flex; gap: 20px; align-items: center;">
-      <cp-icon name="info" size="small" color="blue"></cp-icon>
-      <cp-icon name="info" size="medium" color="blue"></cp-icon>
-      <cp-icon name="info" size="large" color="blue"></cp-icon>
-      <cp-icon name="info" size="xlarge" color="blue"></cp-icon>
-      <cp-icon name="info" size="xxlarge" color="blue"></cp-icon>
+      <cc-icon name="info" size="small" color="blue"></cc-icon>
+      <cc-icon name="info" size="medium" color="blue"></cc-icon>
+      <cc-icon name="info" size="large" color="blue"></cc-icon>
+      <cc-icon name="info" size="xlarge" color="blue"></cc-icon>
+      <cc-icon name="info" size="xxlarge" color="blue"></cc-icon>
     </div>
   `,
   parameters: {
@@ -140,12 +140,12 @@ export const DifferentSizes: Story = {
 export const AllColors: Story = {
   render: () => html`
     <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
-      <cp-icon name="palette" color="purple" size="large"></cp-icon>
-      <cp-icon name="check_circle" color="green" size="large"></cp-icon>
-      <cp-icon name="error" color="red" size="large"></cp-icon>
-      <cp-icon name="warning" color="orange" size="large"></cp-icon>
-      <cp-icon name="settings" color="#666" size="large"></cp-icon>
-      <cp-icon name="dark_mode" color="#000" size="large"></cp-icon>
+      <cc-icon name="palette" color="purple" size="large"></cc-icon>
+      <cc-icon name="check_circle" color="green" size="large"></cc-icon>
+      <cc-icon name="error" color="red" size="large"></cc-icon>
+      <cc-icon name="warning" color="orange" size="large"></cc-icon>
+      <cc-icon name="settings" color="#666" size="large"></cc-icon>
+      <cc-icon name="dark_mode" color="#000" size="large"></cc-icon>
     </div>
   `,
   parameters: {
@@ -160,7 +160,7 @@ export const AllColors: Story = {
 export const MaterialFullSize: Story = {
   render: () => html`
         <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; width: 500px; height: 500px; font-size: 450px">
-            <cp-icon name="palette" color="purple" size="full"></cp-icon>
+            <cc-icon name="palette" color="purple" size="full"></cc-icon>
         </div>
     `,
   parameters: {
@@ -191,25 +191,25 @@ export const CustomIcon: Story = {
 export const CustomSocialIcons: Story = {
   render: () => html`
     <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; text-red">
-      <cp-icon name="lit" library="custom" color="purple" size="large"></cp-icon>
-      <cp-icon name="facebook-2" library="custom" color="blue" size="large"></cp-icon>
-      <cp-icon name="facebook-1" library="custom" color="#316FF6" size="large"></cp-icon>
-      <cp-icon name="linkedin-1" library="custom" color="#0077B5" size="large"></cp-icon>
-      <cp-icon name="linkedin-2" library="custom" color="red" size="large"></cp-icon>
-      <cp-icon name="youtube-1" library="custom" color="#FF0000" size="large"></cp-icon>
-      <cp-icon name="youtube-2" library="custom" color="green" size="large"></cp-icon>
-      <cp-icon name="youtube-3" library="custom" size="large"></cp-icon>
-      <cp-icon name="youtube-4" library="custom" size="large"></cp-icon>
-      <cp-icon name="twitter-x-1" library="custom" color="blue" size="large"></cp-icon>
-      <cp-icon name="twitter-x-2" library="custom" color="black" size="large"></cp-icon>
-      <cp-icon name="instagram-1" library="custom" color="#E1306C" size="large"></cp-icon>
-      <cp-icon name="instagram-2" library="custom" color="#E1306C" size="large"></cp-icon>
-      <cp-icon name="whatsapp-1" library="custom" color="#25D366" size="large"></cp-icon>
-      <cp-icon name="whatsapp-2" library="custom" color="#075E54" size="large"></cp-icon>
-      <cp-icon name="telegram" library="custom" color="blue" size="large"></cp-icon>
-      <cp-icon name="github" library="custom" color="black" size="large"></cp-icon>
-      <cp-icon name="apple" library="custom" color="green" size="large"></cp-icon>
-      <cp-icon name="google-play" library="custom" color="black" size="large"></cp-icon>
+      <cc-icon name="lit" library="custom" color="purple" size="large"></cc-icon>
+      <cc-icon name="facebook-2" library="custom" color="blue" size="large"></cc-icon>
+      <cc-icon name="facebook-1" library="custom" color="#316FF6" size="large"></cc-icon>
+      <cc-icon name="linkedin-1" library="custom" color="#0077B5" size="large"></cc-icon>
+      <cc-icon name="linkedin-2" library="custom" color="red" size="large"></cc-icon>
+      <cc-icon name="youtube-1" library="custom" color="#FF0000" size="large"></cc-icon>
+      <cc-icon name="youtube-2" library="custom" color="green" size="large"></cc-icon>
+      <cc-icon name="youtube-3" library="custom" size="large"></cc-icon>
+      <cc-icon name="youtube-4" library="custom" size="large"></cc-icon>
+      <cc-icon name="twitter-x-1" library="custom" color="blue" size="large"></cc-icon>
+      <cc-icon name="twitter-x-2" library="custom" color="black" size="large"></cc-icon>
+      <cc-icon name="instagram-1" library="custom" color="#E1306C" size="large"></cc-icon>
+      <cc-icon name="instagram-2" library="custom" color="#E1306C" size="large"></cc-icon>
+      <cc-icon name="whatsapp-1" library="custom" color="#25D366" size="large"></cc-icon>
+      <cc-icon name="whatsapp-2" library="custom" color="#075E54" size="large"></cc-icon>
+      <cc-icon name="telegram" library="custom" color="blue" size="large"></cc-icon>
+      <cc-icon name="github" library="custom" color="black" size="large"></cc-icon>
+      <cc-icon name="apple" library="custom" color="green" size="large"></cc-icon>
+      <cc-icon name="google-play" library="custom" color="black" size="large"></cc-icon>
     </div>
   `,
   parameters: {
@@ -225,8 +225,8 @@ export const CustomSocialIcons: Story = {
 export const CustomBankIcons: Story = {
   render: () => html`
     <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; background-color: #ccc; padding: 20px; font-size: 48px">
-      <cp-icon name="LogoIDBEn" library="custom" color="purple" size="full"></cp-icon>
-      <cp-icon name="LogoIDBEnWhite" library="custom" color="blue" size="full"></cp-icon>
+      <cc-icon name="LogoIDBEn" library="custom" color="purple" size="full"></cc-icon>
+      <cc-icon name="LogoIDBEnWhite" library="custom" color="blue" size="full"></cc-icon>
     </div>
   `,
   parameters: {
@@ -241,7 +241,7 @@ export const CustomBankIcons: Story = {
 export const CustomIconFullSize: Story = {
   render: () => html`
         <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; width: 500px; height: auto; font-size: 450px">
-            <cp-icon library="custom" name="lit" color="purple" size="full"></cp-icon>
+            <cc-icon library="custom" name="lit" color="purple" size="full"></cc-icon>
         </div>
     `,
   parameters: {
@@ -256,7 +256,7 @@ export const CustomIconFullSize: Story = {
 export const WithButtonComponent: Story = {
   render: () => html`
     <div style="display: flex; gap: 16px;">
-      <cp-button
+      <cc-button
         color="primary"
         label="Download"
         .iconProps=${{
@@ -266,8 +266,8 @@ export const WithButtonComponent: Story = {
       position: 'left',
       fill: 1
     }}
-      ></cp-button>
-      <cp-button
+      ></cc-button>
+      <cc-button
         color="secondary"
         label="Share"
         size="base"
@@ -278,8 +278,8 @@ export const WithButtonComponent: Story = {
       position: 'right',
       weight: 700
     }}
-      ></cp-button>
-      <cp-button
+      ></cc-button>
+      <cc-button
         color="danger"
         label="Delete"
         size="large"
@@ -291,7 +291,7 @@ export const WithButtonComponent: Story = {
       color: 'white', // Esto se manejaría si tu botón propaga el color al icono
       grade: 200
     }}
-      ></cp-button>
+      ></cc-button>
     </div>
   `,
   parameters: {

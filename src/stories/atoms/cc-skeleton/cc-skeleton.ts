@@ -3,9 +3,9 @@ import type { SkeletonProperties } from "@interfaces/skeleton.interface";
 import { LitElement, html } from "lit";
 import type { CSSResultGroup, TemplateResult } from "lit";
 import { property } from "lit/decorators.js";
-import componentStyles from "./cp-skeleton.lit";
+import componentStyles from "./cc-skeleton.lit";
 
-export class CpSkeleton extends LitElement implements SkeletonProperties {
+export class CcSkeleton extends LitElement implements SkeletonProperties {
   static styles: CSSResultGroup = [componentStyles];
 
   @property({ type: String }) width: string = "50%";
@@ -16,10 +16,10 @@ export class CpSkeleton extends LitElement implements SkeletonProperties {
   }
 }
 
-defineCustomElement("cp-skeleton", CpSkeleton);
+defineCustomElement("cc-skeleton", CcSkeleton);
 
 declare global {
   interface HTMLElementTagNameMap {
-    "cp-skeleton": CpSkeleton;
+    "cc-skeleton": CcSkeleton;
   }
 }

@@ -1,13 +1,13 @@
 import type { LinkProperties } from '@interfaces/link.interface';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './cp-link';
+import './cc-link';
 
 type LinkArgs = Partial<LinkProperties>;
 
 const meta: Meta = {
   title: 'Atoms/Link',
-  component: 'cp-link',
+  component: 'cc-link',
   tags: ['autodocs'],
   argTypes: {
     href: {
@@ -61,7 +61,7 @@ export default meta;
 type Story = StoryObj<LinkArgs>;
 
 const Template = (args: LinkArgs) => html`
-  <cp-link
+  <cc-link
     .href=${args.href ?? ''}
     .target=${args.target ?? ''}
     .rel=${args.rel ?? ''}
@@ -70,7 +70,7 @@ const Template = (args: LinkArgs) => html`
     .radius=${args.radius ?? ''}
     .label=${args.label ?? ''}
     .iconProps=${args.iconProps}
-  ></cp-link>
+  ></cc-link>
 `;
 
 export const PrimaryWithIcon: Story = {
@@ -168,9 +168,9 @@ export const WithIconRight: Story = {
 export const SizesShowcase: Story = {
   render: () => html`
     <div style="display: flex; gap: 16px;">
-      <cp-link href="#" radius='rounded-none' label="Small" size="small"></cp-link>
-      <cp-link href="#" radius='rounded-none' label="Base" size="base"></cp-link>
-      <cp-link href="#" radius='rounded-none' label="Large" size="large"></cp-link>
+      <cc-link href="#" radius='rounded-none' label="Small" size="small"></cc-link>
+      <cc-link href="#" radius='rounded-none' label="Base" size="base"></cc-link>
+      <cc-link href="#" radius='rounded-none' label="Large" size="large"></cc-link>
     </div>
   `,
   parameters: {
@@ -186,9 +186,9 @@ export const SizesShowcase: Story = {
 export const linkWithIcons: Story = {
   render: () => html`
     <div style="display: flex; gap: 16px;">
-      <cp-link href="#" radius="rounded-none" label="link 1" size="base" .iconProps=${{ library: 'material', name: 'search', size: 'medium', position: 'right' }}></cp-link>
-      <cp-link href="#" radius='rounded-none' label="link 2" size="base" .iconProps=${{ library: 'material', name: 'chevron_right', size: 'medium', position: 'right' }}></cp-link>
-      <cp-link href="#" radius='rounded-none' label="link 3" size="base" .iconProps=${{ library: 'material', name: 'search', size: 'medium', position: 'left' }}></cp-link>
+      <cc-link href="#" radius="rounded-none" label="link 1" size="base" .iconProps=${{ library: 'material', name: 'search', size: 'medium', position: 'right' }}></cc-link>
+      <cc-link href="#" radius='rounded-none' label="link 2" size="base" .iconProps=${{ library: 'material', name: 'chevron_right', size: 'medium', position: 'right' }}></cc-link>
+      <cc-link href="#" radius='rounded-none' label="link 3" size="base" .iconProps=${{ library: 'material', name: 'search', size: 'medium', position: 'left' }}></cc-link>
     </div>
   `,
   parameters: {
@@ -207,14 +207,14 @@ export const AllColorsShowcase: Story = {
       'primary-white', 'secondary-white', 'sucess-white', 'warning-white', 'danger-white', 'info-white', 'neutral-white'
     ].map(
       color => html`
-          <cp-link
+          <cc-link
             href="#"
             .label=${color}
             .color=${color}
             .size=${'base'}
             .radius=${'rounded-none'}
           >
-          </cp-link>
+          </cc-link>
         `
     )}
     </div>
@@ -233,13 +233,13 @@ export const AllColorsWithRoundedBorder: Story = {
     <div style="display: flex; flex-wrap: wrap; gap: 12px;">
       ${['primary-border', 'secondary-border', 'sucess-border', 'warning-border', 'danger-border', 'white-border', 'info-border', 'neutral-border'].map(
     color => html`
-          <cp-link
+          <cc-link
             href="#"
             .label=${color}
             .color=${color}
             .size=${'base'}
           >
-          </cp-link>
+          </cc-link>
         `
   )}
     </div>

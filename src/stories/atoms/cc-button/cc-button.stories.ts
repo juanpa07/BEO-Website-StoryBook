@@ -2,13 +2,13 @@ import type { ButtonProperties } from "@interfaces/button.interface";
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { expect, fn, userEvent } from 'storybook/test';
 import { html } from 'lit';
-import './cp-button';
+import './cc-button';
 
 type ButtonArgs = Partial<ButtonProperties>;
 
 const meta: Meta = {
   title: 'Atoms/Button',
-  component: 'cp-button',
+  component: 'cc-button',
   tags: ['autodocs'],
   argTypes: {
     color: {
@@ -54,7 +54,7 @@ export default meta;
 type Story = StoryObj<ButtonArgs>;
 
 const Template = (args: ButtonArgs) => html`
-  <cp-button
+  <cc-button
     .color=${args.color ?? ''}
     .size=${args.size ?? ''}
     .radius=${args.radius ?? ''}
@@ -64,7 +64,7 @@ const Template = (args: ButtonArgs) => html`
       // no-delete - temporal para debugging
       console.log('Click detect:', e.detail.event);
     }}
-  ></cp-button>
+  ></cc-button>
 `;
 
 export const Primary: Story = {
@@ -156,9 +156,9 @@ export const WithIconRight: Story = {
 export const SizesShowcase: Story = {
   render: () => html`
     <div style="display: flex; gap: 16px;">
-      <cp-button color="primary" size="small" label="Small"></cp-button>
-      <cp-button color="primary" size="base" label="Base"></cp-button>
-      <cp-button color="primary" size="large" label="Large"></cp-button>
+      <cc-button color="primary" size="small" label="Small"></cc-button>
+      <cc-button color="primary" size="base" label="Base"></cc-button>
+      <cc-button color="primary" size="large" label="Large"></cc-button>
     </div>
   `,
   parameters: {
@@ -173,11 +173,11 @@ export const SizesShowcase: Story = {
 export const RadiusVariants: Story = {
   render: () => html`
     <div style="display: flex; gap: 16px;">
-      <cp-button label="Rounded" radius="rounded"></cp-button>
-      <cp-button label="Rounded MD" radius="rounded-md"></cp-button>
-      <cp-button label="Rounded LG" radius="rounded-lg"></cp-button>
-      <cp-button label="Full" radius="rounded-full"></cp-button>
-      <cp-button label="None" radius="rounded-none"></cp-button>
+      <cc-button label="Rounded" radius="rounded"></cc-button>
+      <cc-button label="Rounded MD" radius="rounded-md"></cc-button>
+      <cc-button label="Rounded LG" radius="rounded-lg"></cc-button>
+      <cc-button label="Full" radius="rounded-full"></cc-button>
+      <cc-button label="None" radius="rounded-none"></cc-button>
     </div>
   `,
   parameters: {
@@ -197,12 +197,12 @@ export const AllColorsShowcase: Story = {
         'secondary', 'secondary-border', 'secondary-white', 'secondary-transparent-white',
         'sucess', 'warning', 'danger', 'info', 'neutral', 'white', 'black', 'gradient-1',
       ].map(color => html`
-        <cp-button
+        <cc-button
           .color=${color}
           .label=${color}
           .size=${'base'}
           .radius=${'rounded-md'}>
-        </cp-button>
+        </cc-button>
       `)}
     </div>
   `,
@@ -248,7 +248,7 @@ export const ClickInteraction: Story = {
   render: Template,
   play: async ({ canvasElement }) => {
     // Get the custom element
-    const buttonElement = canvasElement.querySelector('cp-button');
+    const buttonElement = canvasElement.querySelector('cc-button');
     
     // Access shadow root to get the actual button
     const shadowRoot = buttonElement?.shadowRoot;
@@ -290,7 +290,7 @@ export const MultipleClicks: Story = {
   },
   render: Template,
   play: async ({ canvasElement }) => {
-    const buttonElement = canvasElement.querySelector('cp-button');
+    const buttonElement = canvasElement.querySelector('cc-button');
     const button = buttonElement?.shadowRoot?.querySelector('button');
     
     await expect(button).toBeTruthy();
@@ -335,7 +335,7 @@ export const ButtonWithIcon: Story = {
   },
   render: Template,
   play: async ({ canvasElement }) => {
-    const buttonElement = canvasElement.querySelector('cp-button');
+    const buttonElement = canvasElement.querySelector('cc-button');
     const shadowRoot = buttonElement?.shadowRoot;
     const button = shadowRoot?.querySelector('button');
     
@@ -343,7 +343,7 @@ export const ButtonWithIcon: Story = {
     await expect(button).toBeTruthy();
     
     // Verify icon is present inside shadow root
-    const icon = shadowRoot?.querySelector('cp-icon');
+    const icon = shadowRoot?.querySelector('cc-icon');
     await expect(icon).toBeTruthy();
     
     // Create event spy
@@ -375,7 +375,7 @@ export const AccessibilityTest: Story = {
   },
   render: Template,
   play: async ({ canvasElement }) => {
-    const buttonElement = canvasElement.querySelector('cp-button');
+    const buttonElement = canvasElement.querySelector('cc-button');
     const shadowRoot = buttonElement?.shadowRoot;
     const button = shadowRoot?.querySelector('button');
     

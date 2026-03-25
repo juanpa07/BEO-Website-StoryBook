@@ -1,14 +1,14 @@
 import type { SkeletonProperties } from "@interfaces/skeleton.interface";
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './cp-skeleton';
+import './cc-skeleton';
 
 type SkeletonArgs = Partial<SkeletonProperties>;
 
 const meta: Meta = {
   title: "Atoms/Skeleton",
   tags: ["autodocs"],
-  component: "cp-skeleton",
+  component: "cc-skeleton",
   argTypes: {
     width: {
       description: "Width of the skeleton (CSS value)",
@@ -29,10 +29,10 @@ type Story = StoryObj<SkeletonArgs>;
 
 
 const Template = (args: SkeletonArgs) => html`
-  <cp-skeleton
+  <cc-skeleton
     .width=${args.width}
     .height=${args.height}
-  ></cp-skeleton>
+  ></cc-skeleton>
 `;
 
 export const fullSkeleton: Story = {

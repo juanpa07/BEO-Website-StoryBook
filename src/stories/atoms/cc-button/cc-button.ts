@@ -6,10 +6,10 @@ import { defineCustomElement } from "@helper/defineCustomElement";
 import type { ButtonProperties } from "@interfaces/button.interface";
 import type { IconProperties } from "@interfaces/icon.interface";
 
-import componentStyles from "./cp-button.lit";
-import "../cp-icon/cp-icon";
+import componentStyles from "./cc-button.lit";
+import "../cc-icon/cc-icon";
 
-export class CpButton extends LitElement implements ButtonProperties {
+export class CcButton extends LitElement implements ButtonProperties {
   static styles: CSSResultGroup = [componentStyles];
 
   // Properties button
@@ -74,10 +74,10 @@ export class CpButton extends LitElement implements ButtonProperties {
   }
 }
 
-defineCustomElement("cp-button", CpButton);
+defineCustomElement("cc-button", CcButton);
 
 declare global {
   interface HTMLElementTagNameMap {
-    "cp-button": CpButton;
+    "cc-button": CcButton;
   }
 }

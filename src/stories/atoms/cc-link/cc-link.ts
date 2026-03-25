@@ -8,11 +8,11 @@ import type { CSSResultGroup, TemplateResult } from "lit";
 
 import { property } from 'lit/decorators.js';
 
-import componentStyles from './cp-link.lit';
-import "../cp-icon/cp-icon";
+import componentStyles from './cc-link.lit';
+import "../cc-icon/cc-icon";
 
 
-export class CpLink extends LitElement implements LinkProperties {
+export class CcLink extends LitElement implements LinkProperties {
 
   static styles: CSSResultGroup = [componentStyles];
 
@@ -68,12 +68,12 @@ export class CpLink extends LitElement implements LinkProperties {
 
     return html`
       <span class="link--span link--icon-${this.iconProps.position ?? 'right'}">
-        <idblabext-icon
+        <cc-icon
           .library=${this.iconProps.library ?? "material"}
           .name=${this.iconProps.name}
           .size=${this.iconProps.size ?? "small"}
           .color=${this.iconProps.color ?? ""}
-        ></idblabext-icon>
+        ></cc-icon>
         ${this.label ? unsafeHTML(this.label) : ''}
       </span>
     `;
@@ -101,10 +101,10 @@ export class CpLink extends LitElement implements LinkProperties {
   }
 }
 
-defineCustomElement('cp-link', CpLink);
+defineCustomElement('cc-link', CcLink);
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cp-link': CpLink;
+    'cc-link': CcLink;
   }
 }

@@ -3,11 +3,11 @@ import type { CSSResultGroup, TemplateResult } from "lit";
 import { property, state } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { defineCustomElement } from "@helper/defineCustomElement";
-import componentStyles from "./cp-icon.lit";
+import componentStyles from "./cc-icon.lit";
 import type { IconProperties } from "@interfaces/icon.interface";
 import { getCustomIcon } from "@assets/common/custom-icons/customIcons";
 
-export class CpIcon extends LitElement implements IconProperties {
+export class CcIcon extends LitElement implements IconProperties {
     static styles: CSSResultGroup = [
         componentStyles,
         css`
@@ -104,10 +104,10 @@ export class CpIcon extends LitElement implements IconProperties {
     }
 }
 
-defineCustomElement("cp-icon", CpIcon);
+defineCustomElement("cc-icon", CcIcon);
 
 declare global {
     interface HTMLElementTagNameMap {
-        "cp-icon": CpIcon;
+        "cc-icon": CcIcon;
     }
 }
