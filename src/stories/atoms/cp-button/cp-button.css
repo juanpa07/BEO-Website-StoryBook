@@ -1,0 +1,168 @@
+/* === Base button === */
+.button--no-label {
+  @apply !p-1;
+}
+
+.button {
+  @apply transition-colors duration-300 cursor-pointer font-main text-shadow-sm my-2 mr-2;
+}
+
+.button--span {
+  @apply flex items-center flex-nowrap gap-2;
+}
+
+.button--span idblabext-icon{
+  @apply text-shadow-sm;
+}
+
+/* =============== */
+/* === Colors ==== */
+/* =============== */
+
+/* === Primary === */
+.button--color-primary {
+  @apply bg-primary-500 hover:bg-primary-600 active:bg-primary-600 text-neutral-100 hover:text-white;
+}
+
+/* === Primary border=== */
+.button--color-primary-border {
+  @apply border-2 border-solid border-primary-500 bg-transparent hover:border-primary-600 hover:bg-primary-500/10 active:border-primary-600 text-primary-600;
+}
+
+/* === Primary white === */
+.button--color-primary-white {
+  @apply border-2 border-solid border-primary-500 bg-white hover:border-primary-600 hover:bg-primary-100 active:border-primary-600 text-primary-600;
+}
+
+/* === Primary transparent whiter=== */
+.button--color-primary-transparent-white {
+  @apply border-2 border-solid border-primary-500 bg-white/50 hover:border-primary-600 hover:bg-white/80 active:border-primary-600 text-primary-600;
+}
+
+/* === secondary === */
+.button--color-secondary {
+  @apply bg-secondary-500 hover:bg-secondary-600 active:bg-secondary-600 text-white border-2 border-solid border-secondary-500;
+}
+
+/* === Secondary border === */
+.button--color-secondary-border {
+  @apply border-2 border-solid border-secondary-500 bg-transparent hover:border-secondary-600 hover:bg-secondary-500/10 active:border-secondary-600 text-secondary-600;
+}
+
+/* === secondary white === */
+.button--color-secondary-white {
+  @apply border-2 border-solid border-secondary-500 bg-white hover:border-secondary-600 hover:bg-secondary-100 active:border-secondary-600 text-secondary-600;
+}
+
+/* === Primary transparent white === */
+.button--color-secondary-transparent-white {
+  @apply border-2 border-solid border-secondary-500 bg-white/50 hover:border-secondary-600 hover:bg-white/80 active:border-secondary-600 text-secondary-600;
+}
+
+/* === white === */
+.button--color-white {
+  @apply bg-white hover:border-neutral-600 active:border-neutral-600 text-neutral-600 hover:text-white;
+}
+
+/* === white === */
+.button--color-black {
+  @apply bg-primary-500 hover:bg-primary-600 active:bg-primary-600 text-neutral-600 hover:text-white;
+}
+
+/* === sucess === */
+.button--color-sucess {
+  @apply bg-green-500 hover:bg-green-600 active:bg-green-600 text-white;
+}
+
+/* === warning === */
+.button--color-warning {
+  @apply bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-500 text-white;
+}
+
+/* === danger === */
+.button--color-danger {
+  @apply bg-red-400 hover:bg-red-500 active:bg-red-500 text-white;
+}
+
+/* === info === */
+.button--color-info {
+  @apply bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-600 text-white;
+}
+
+/* === info === */
+.button--color-neutral {
+  @apply bg-neutral-500 hover:bg-neutral-600 active:bg-neutral-600 text-white;
+}
+
+.button--color-caribe-yellow {
+  @apply bg-caribe-yellow hover:bg-yellow-600 active:bg-yellow-600 text-white border-2 border-solid border-caribe-yellow;
+}
+
+.button--color-caribe-blue {
+  @apply bg-caribe-blue hover:bg-cyan-600 active:bg-cyan-600 text-white border-2 border-solid border-caribe-blue;
+}
+
+.button--color-caribe-green {
+  @apply bg-caribe-green hover:bg-green-600 active:bg-green-600 text-white border-2 border-solid border-caribe-green;
+}
+
+.button--color-caribe-red {
+  @apply bg-caribe-red hover:bg-red-800 active:bg-red-800 text-white border-2 border-solid border-caribe-red;
+}
+
+.button--color-transparent {
+  @apply bg-transparent hover:bg-neutral-300 active:bg-neutral-300 text-neutral-500 hover:text-neutral-700 p-2;
+}
+
+/* ============= */
+/* === Sizes === */
+/* ============= */
+
+.button--size-small {
+  @apply px-3 py-1 text-xs font-medium;
+}
+
+.button--size-base {
+  @apply px-4 py-2 text-base font-medium;
+}
+
+.button--size-large {
+  @apply px-6 py-3 text-lg font-semibold;
+}
+
+
+/* ============== */
+/* === radius === */
+/* ============== */
+
+.button--radius-rounded {
+  @apply rounded-sm;
+}
+
+.button--radius-rounded-md {
+  @apply rounded-md;
+}
+
+.button--radius-rounded-lg {
+  @apply rounded-lg;
+}
+
+.button--radius-rounded-full {
+  @apply rounded-full;
+}
+
+.button--radius-rounded-none {
+  @apply rounded-none;
+}
+
+
+/* ===================== */
+/* === Icon Position === */
+/* ===================== */
+
+.button--icon-right idblabext-icon{
+  @apply order-1;
+}
+.button--icon-left idblabext-icon{
+  @apply -order-1;
+}

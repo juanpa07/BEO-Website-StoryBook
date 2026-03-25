@@ -18,6 +18,7 @@ const config: StorybookConfig = {
     return mergeConfig(config, {
       resolve: {
         alias: {
+          '@assets': fileURLToPath(new URL('../src/assets', import.meta.url)),
           '@helper': fileURLToPath(new URL('../src/helper', import.meta.url)),
           '@interfaces': fileURLToPath(new URL('../src/interfaces', import.meta.url)),
           '@enums': fileURLToPath(new URL('../src/enums', import.meta.url)),

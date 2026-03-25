@@ -1,0 +1,44 @@
+ /* Clases para los Material Symbols */
+ .material-symbols {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block; /* O 'block' si quieres que ocupe todo el ancho */
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols{
+    @apply leading-6;
+}
+
+.material-symbols--size-small {
+    @apply text-base;
+}
+
+.material-symbols--size-medium {
+    @apply text-2xl;
+
+}
+
+.material-symbols--size-large {
+    @apply text-4xl leading-1;
+}
+
+.material-symbols--size-xlarge {
+    @apply text-5xl leading-1;
+}
+
+.material-symbols--size-xxlarge {
+    @apply text-6xl leading-1;
+}
+
+.material-symbols--size-full {
+    @apply text-[inherit];
+}

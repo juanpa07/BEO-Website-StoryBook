@@ -11,7 +11,8 @@
     "watch:storybook": "storybook dev -p 6008",
     "watch:tailwind": "node ./src/utils/tailwind-watch.mjs",
     "build-storybook": "storybook build",
-    "build:tailwind": "node ./src/utils/tailwind-build.mjs"
+    "build:tailwind": "node ./src/utils/tailwind-build.mjs",
+    "build:link": "esbuild --bundle --format=esm --minify --outfile=./dist/cp-link.bundle.js src/stories/atoms/cp-link/cp-link.ts"
   },
   "dependencies": {
     "lit": "^3.3.2",

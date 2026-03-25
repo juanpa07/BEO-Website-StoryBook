@@ -1,7 +1,9 @@
-import type { Preview } from '@storybook/web-components-vite'
+import type { Preview } from '@storybook/web-components-vite';
+import "../src/styles/fonts.css";
+
 
 // Estilos globales de Tailwind preprocesados (variables, theme, base styles)
-import '../src/stories/styles/tailwind.css';
+import '../src/styles/tailwind.css';
 
 const preview: Preview = {
   parameters: {
