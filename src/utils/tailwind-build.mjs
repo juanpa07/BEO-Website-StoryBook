@@ -104,7 +104,7 @@ function findComponentCssFiles(dir, files = []) {
       if (item !== "styles") {
         findComponentCssFiles(fullPath, files);
       }
-    } else if (item.endsWith(".css") && item.startsWith("cp-")) {
+    } else if (item.endsWith(".css") && item.startsWith("cc-")) {
       files.push(fullPath);
     }
   }

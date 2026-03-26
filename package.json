@@ -12,8 +12,10 @@
     "watch:tailwind": "node ./src/utils/tailwind-watch.mjs",
     "build-storybook": "storybook build",
     "build:tailwind": "node ./src/utils/tailwind-build.mjs",
+    "build:styles": "node ./src/utils/styles-build.mjs",
+    "watch:styles": "node ./src/utils/styles-build.mjs --watch",
     "build:components": "node ./src/utils/build-components.mjs",
-    "build:dist": "npm run build:tailwind && npm run build:components"
+    "build:dist": "npm run build:tailwind && npm run build:components && npm run build:styles"
   },
   "dependencies": {
     "lit": "^3.3.2",

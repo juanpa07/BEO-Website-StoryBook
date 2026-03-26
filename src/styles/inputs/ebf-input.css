@@ -1,0 +1,12 @@
+/**
+ * ebf-input.css
+ * Entry point de ejemplo para el design system EBF.
+ * Este archivo hereda el @theme definido en src/styles/input.css
+ * gracias al @reference que inyecta styles-build.mjs automáticamente.
+ */
+
+@import 'tailwindcss';
+
+/* Aquí puedes agregar utilidades, componentes o layers adicionales
+   específicos para el contexto EBF, y se generará dist/css/ebf-input.min.css */
+   
