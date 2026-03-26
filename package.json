@@ -13,6 +13,7 @@
     "build-storybook": "storybook build",
     "build:tailwind": "node ./src/utils/tailwind-build.mjs",
     "build:styles": "node ./src/utils/styles-build.mjs",
+    "build:tokens": "node ./src/utils/generate-design-tokens.mjs",
     "watch:styles": "node ./src/utils/styles-build.mjs --watch",
     "build:components": "node ./src/utils/build-components.mjs",
     "build:dist": "npm run build:tailwind && npm run build:components && npm run build:styles"

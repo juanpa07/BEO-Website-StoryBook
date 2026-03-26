@@ -7,6 +7,18 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --default-transition-duration: 150ms;
@@ -174,6 +186,9 @@
   }
 }
 @layer utilities {
+  .collapse {
+    visibility: collapse;
+  }
   .static {
     position: static;
   }
@@ -208,6 +223,48 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .font-dancing {
+    font-family: 'Dancing Script', 'Helvetica Neue', Arial, sans-serif;
+  }
+  .font-fira-code {
+    font-family: 'Fira Code', monospace;
+  }
+  .font-montserrat {
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  }
+  .font-open-sans {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .italic {
+    font-style: italic;
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
@@ -230,6 +287,9 @@
   }
   .text-accent {
     color: var(--color-accent);
+  }
+  .bg-primary {
+    background-color: var(--color-primary);
   }
 }
 @property --tw-rotate-x {
