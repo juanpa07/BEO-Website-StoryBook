@@ -21,7 +21,7 @@
 
 /* === Primary === */
 .button--color-primary {
-  @apply bg-primary-500 hover:bg-primary-600 active:bg-primary-600 text-neutral-100 hover:text-white border-2 border-solid border-primary-500;
+  @apply bg-primary-500 hover:bg-primary-600 active:bg-primary-600 text-neutral-100 hover:text-white border-1 border-solid border-primary-500;
 }
 
 /* === Primary border=== */
@@ -61,7 +61,7 @@
 
 /* === white === */
 .button--color-white {
-  @apply bg-white hover:border-neutral-600 active:border-neutral-600 text-neutral-600 hover:text-white;
+  @apply bg-white hover:border-neutral-600 active:border-neutral-600 text-neutral-600 hover:text-white border-solid border-white;
 }
 
 /* === white === */
@@ -71,27 +71,27 @@
 
 /* === sucess === */
 .button--color-sucess {
-  @apply bg-green-500 hover:bg-green-600 active:bg-green-600 text-white;
+  @apply bg-green-500 hover:bg-green-600 active:bg-green-600 text-white border-2 border-solid border-green-500;
 }
 
 /* === warning === */
 .button--color-warning {
-  @apply bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-500 text-white;
+  @apply bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-500 text-white border-solid border-yellow-400;
 }
 
 /* === danger === */
 .button--color-danger {
-  @apply bg-red-400 hover:bg-red-500 active:bg-red-500 text-white;
+  @apply bg-red-400 hover:bg-red-500 active:bg-red-500 text-white border-solid border-red-400;
 }
 
 /* === info === */
 .button--color-info {
-  @apply bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-600 text-white;
+  @apply bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-600 text-white border-solid border-cyan-500;
 }
 
 /* === info === */
 .button--color-neutral {
-  @apply bg-neutral-500 hover:bg-neutral-600 active:bg-neutral-600 text-white;
+  @apply bg-neutral-500 hover:bg-neutral-600 active:bg-neutral-600 text-white border-solid border-neutral-500;
 }
 
 .button--color-transparent {

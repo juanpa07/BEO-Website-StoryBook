@@ -195,7 +195,7 @@ export const AllColorsShowcase: Story = {
       ${[
         'primary', 'primary-border', 'primary-white', 'primary-transparent-white',
         'secondary', 'secondary-border', 'secondary-white', 'secondary-transparent-white',
-        'sucess', 'warning', 'danger', 'info', 'neutral', 'white', 'black', 'gradient-1',
+        'sucess', 'warning', 'danger', 'info', 'neutral', 'white', 'black',
       ].map(color => html`
         <cc-button
           .color=${color}
