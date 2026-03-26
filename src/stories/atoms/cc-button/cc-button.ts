@@ -16,7 +16,7 @@ export class CcButton extends LitElement implements ButtonProperties {
   @property({ type: String }) color: string = "primary";
   @property({ type: String }) size: string = "small";
   @property({ type: String }) radius: string = "rounded";
-  @property({ type: String }) label: string = "Button";
+  @property({ type: String }) label: string = ""; // Cambia "Button" por ""
 
   // Properties icon
   @property({ type: Object }) iconProps?: IconProperties;

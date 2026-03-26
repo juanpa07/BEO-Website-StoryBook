@@ -2,11 +2,12 @@ import type { ButtonProperties } from "@interfaces/button.interface";
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { expect, fn, userEvent } from 'storybook/test';
 import { html } from 'lit';
+import { ifDefined } from 'lit/directives/if-defined.js'; // Importante para la doc
 import './cc-button';
 
-type ButtonArgs = Partial<ButtonProperties>;
+type ButtonArgs = Partial<ButtonProperties> & { onClick?: Function };
 
-const meta: Meta = {
+const meta: Meta<ButtonArgs> = {
   title: 'Atoms/Button',
   component: 'cc-button',
   tags: ['autodocs'],
@@ -46,22 +47,32 @@ const meta: Meta = {
       action: 'clicked',
       description: 'Click event handler'
     }
-  }
+  },
+  // AJUSTE 1: Forzamos a Storybook a leer el DOM dinámicamente para la doc
+  parameters: {
+    docs: {
+      source: {
+        type: 'dynamic',
+        language: 'html',
+      },
+    },
+  },
 };
 
 export default meta;
 
 type Story = StoryObj<ButtonArgs>;
 
+// AJUSTE 2: Cambiamos '.' por atributos normales para que Storybook los "vea"
 const Template = (args: ButtonArgs) => html`
   <cc-button
-    .color=${args.color ?? ''}
-    .size=${args.size ?? ''}
-    .radius=${args.radius ?? ''}
-    .label=${args.label ?? ''}
+    color=${ifDefined(args.color)}
+    size=${ifDefined(args.size)}
+    radius=${ifDefined(args.radius)}
+    label=${ifDefined(args.label)}
     .iconProps=${args.iconProps}
     @button-click=${(e: CustomEvent) => {
-      // no-delete - temporal para debugging
+      if (args.onClick) args.onClick(e);
       console.log('Click detect:', e.detail.event);
     }}
   ></cc-button>
@@ -198,10 +209,10 @@ export const AllColorsShowcase: Story = {
         'sucess', 'warning', 'danger', 'info', 'neutral', 'white', 'black',
       ].map(color => html`
         <cc-button
-          .color=${color}
-          .label=${color}
-          .size=${'base'}
-          .radius=${'rounded-md'}>
+          color=${color}
+          label=${color}
+          size=${'base'}
+          radius=${'rounded-md'}>
         </cc-button>
       `)}
     </div>
@@ -217,13 +228,14 @@ export const AllColorsShowcase: Story = {
 
 export const IconOnlyButton: Story = {
   args: {
-    label: '',
+    label: '', // Importante que sea string vacío
     radius: 'rounded-full',
     size: 'base',
+    color: 'primary',
     iconProps: {
       library: 'material',
       name: 'menu',
-      size: 'large',
+      size: 'medium', // 'large' a veces rompe el padding si el botón es pequeño
       position: 'left'
     }
   },
@@ -231,13 +243,13 @@ export const IconOnlyButton: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Circular button with icon only.'
+        story: 'Circular button with icon only. Para que funcione, el label debe estar vacío.'
       }
     }
   }
 };
 
-// 🧪 Testing Stories with Play Functions
+// 🧪 Testing Stories con Play Functions (Tus originales mantenidos)
 
 export const ClickInteraction: Story = {
   args: {
@@ -247,29 +259,16 @@ export const ClickInteraction: Story = {
   },
   render: Template,
   play: async ({ canvasElement }) => {
-    // Get the custom element
     const buttonElement = canvasElement.querySelector('cc-button');
-    
-    // Access shadow root to get the actual button
     const shadowRoot = buttonElement?.shadowRoot;
     const button = shadowRoot?.querySelector('button');
-    
-    // Verify button exists
     await expect(button).toBeTruthy();
-    
-    // Create a spy for the custom event
     const eventSpy = fn();
     buttonElement?.addEventListener('button-click', eventSpy);
-    
-    // Simulate click
     if (button) {
       await userEvent.click(button);
     }
-    
-    // Wait a bit for the event to propagate
     await new Promise(resolve => setTimeout(resolve, 100));
-    
-    // Verify event was fired
     await expect(eventSpy).toHaveBeenCalled();
     await expect(eventSpy).toHaveBeenCalledTimes(1);
   },
@@ -292,24 +291,15 @@ export const MultipleClicks: Story = {
   play: async ({ canvasElement }) => {
     const buttonElement = canvasElement.querySelector('cc-button');
     const button = buttonElement?.shadowRoot?.querySelector('button');
-    
     await expect(button).toBeTruthy();
-    
-    // Create event spy
     const eventSpy = fn();
     buttonElement?.addEventListener('button-click', eventSpy);
-    
-    // Click 3 times
     if (button) {
       await userEvent.click(button);
       await userEvent.click(button);
       await userEvent.click(button);
     }
-    
-    // Wait for events
     await new Promise(resolve => setTimeout(resolve, 100));
-    
-    // Verify it was clicked 3 times
     await expect(eventSpy).toHaveBeenCalledTimes(3);
   },
   parameters: {
@@ -338,23 +328,14 @@ export const ButtonWithIcon: Story = {
     const buttonElement = canvasElement.querySelector('cc-button');
     const shadowRoot = buttonElement?.shadowRoot;
     const button = shadowRoot?.querySelector('button');
-    
-    // Verify button exists
     await expect(button).toBeTruthy();
-    
-    // Verify icon is present inside shadow root
     const icon = shadowRoot?.querySelector('cc-icon');
     await expect(icon).toBeTruthy();
-    
-    // Create event spy
     const eventSpy = fn();
     buttonElement?.addEventListener('button-click', eventSpy);
-    
-    // Click and verify
     if (button) {
       await userEvent.click(button);
     }
-    
     await new Promise(resolve => setTimeout(resolve, 100));
     await expect(eventSpy).toHaveBeenCalled();
   },
@@ -378,14 +359,8 @@ export const AccessibilityTest: Story = {
     const buttonElement = canvasElement.querySelector('cc-button');
     const shadowRoot = buttonElement?.shadowRoot;
     const button = shadowRoot?.querySelector('button');
-    
-    // Verify button exists
     await expect(button).toBeTruthy();
-    
-    // Verify button has correct type
     await expect(button).toHaveAttribute('type', 'button');
-    
-    // Verify button text content
     await expect(button?.textContent?.trim()).toContain('Accessible Button');
   },
   parameters: {
