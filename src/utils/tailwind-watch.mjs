@@ -10,7 +10,7 @@ const __dirname = dirname(__filename);
 // Directorios
 const COMPONENTS_DIR = join(__dirname, "..", "stories");
 const STYLES_DIR = join(__dirname, "..", "styles");
-const INPUT_CSS_PATH = join(STYLES_DIR, "input.css");
+const INPUT_CSS_PATH = join(STYLES_DIR, "inputs", "input.css");
 const GLOBAL_CSS_OUTPUT = join(STYLES_DIR, "tailwind.css");
 
 let isProcessingFile = false;

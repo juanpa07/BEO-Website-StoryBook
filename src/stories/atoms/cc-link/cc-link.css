@@ -200,52 +200,9 @@
   @apply text-yellow-500 transition-all duration-100 ease-in-out hover:text-yellow-600 py-0;
 }
 
-/* === green === */
-.link--color-green-darken-2 {
-  @apply bg-green-darken-2 hover:bg-green-800 active:bg-green-800 text-neutral-100 hover:text-white;
-}
-
-.link--color-green-darken-1 {
-  @apply bg-green-darken-1 hover:bg-green-darken-2 active:bg-green-darken-2 text-neutral-100 hover:text-white;
-}
 
 .link--color-green {
   @apply bg-green-500 hover:bg-green-600 active:bg-green-600 text-neutral-100 hover:text-white;
-}
-
-.link--color-green-lighten-1 {
-  @apply bg-green-lighten-1 hover:bg-green-lighten-2 active:bg-green-lighten-2 text-neutral-100 hover:text-white;
-}
-
-.link--color-green-lighten-2 {
-  @apply bg-green-lighten-2 hover:bg-green-lighten-1 active:bg-green-lighten-1 text-neutral-100 hover:text-white;
-}
-
-.link--color-green-link {
-  @apply text-green-500 transition-all duration-100 ease-in-out hover:text-green-600 py-0;
-}
-
-/* === purple === */
-.link--color-purple {
-  @apply bg-purple-500 hover:bg-purple-600 active:bg-purple-600 text-neutral-100 hover:text-white;
-}
-
-.link--color-purple-link {
-  @apply text-purple-500 transition-all duration-100 ease-in-out hover:text-purple-600 py-0;
-}
-
-/* Caribe colors*/
-.link--color-caribe-yellow {
-  @apply bg-caribe-yellow hover:bg-yellow-600 active:bg-yellow-600 text-white border-2 border-solid border-caribe-yellow;
-}
-.link--color-caribe-blue {
-  @apply bg-caribe-blue hover:bg-cyan-600 active:bg-cyan-600 text-white border-2 border-solid border-caribe-blue;
-}
-.link--color-caribe-green {
-  @apply bg-caribe-green hover:bg-green-600 active:bg-green-600 text-white border-2 border-solid border-caribe-green;
-}
-.link--color-caribe-red {
-  @apply bg-caribe-red hover:bg-red-800 active:bg-red-800 text-white border-2 border-solid border-caribe-red;
 }
 
 /* ======================== */
@@ -400,37 +357,3 @@
 .link--color-black {
   @apply bg-zinc-800 hover:bg-zinc-950 active:bg-zinc-950 text-white hover:text-white;
 }
-
-.link--color-gradient-get-2025 {
-  @apply text-white;
-  /* el preprocesado e tailwind no esta ejecutando correctamente este gradiente*/
-  background: linear-gradient(45deg, #009ade, #ff5100, #db4569);
-}
-.link--color-gradient-get-2025:hover {
-  @apply text-white;
-  /* el preprocesado e tailwind no esta ejecutando correctamente este gradiente*/
-  background: linear-gradient(45deg, #0186c0, #e64b03, #cb3c5d);
-}
-
-.link--color-gradient-caribequity {
-  @apply text-white;
-  /* el preprocesado e tailwind no esta ejecutando correctamente este gradiente*/
-  background: linear-gradient(45deg, #f0a820, #009776, #e0523e);
-}
-.link--color-gradient-caribequity:hover {
-  @apply text-white;
-  /* el preprocesado e tailwind no esta ejecutando correctamente este gradiente*/
-  background: linear-gradient(45deg, #c0861a, #015845, #8f3428);
-}
-
-.link--color-gradient-caribequity-2 {
-  @apply text-white;
-  /* el preprocesado e tailwind no esta ejecutando correctamente este gradiente*/
-  background: linear-gradient(45deg, #f0a820, #009776);
-}
-.link--color-gradient-caribequity-2:hover {
-  @apply text-white;
-  /* el preprocesado e tailwind no esta ejecutando correctamente este gradiente*/
-  background: linear-gradient(45deg, #c0861a, #015845);
-}
-

@@ -16,7 +16,7 @@ const meta: Meta = {
       options: [
         'primary', 'primary-border', 'primary-white', 'primary-transparent-white',
         'secondary', 'secondary-border', 'secondary-white', 'secondary-transparent-white',
-        'sucess', 'warning', 'danger', 'info', 'neutral', 'white', 'black', 'caribe-yellow', 'caribe-blue', 'caribe-green', 'caribe-red'
+        'sucess', 'warning', 'danger', 'info', 'neutral', 'white', 'black'
       ],
       description: 'Button color variant',
       defaultValue: 'secondary'
@@ -69,7 +69,7 @@ const Template = (args: ButtonArgs) => html`
 
 export const Primary: Story = {
   args: {
-    color: 'caribe-yellow',
+    color: 'primary',
     size: 'base',
     radius: 'rounded-md',
     label: 'Primary Button',

@@ -36,7 +36,7 @@ const __dirname  = dirname(__filename);
 // ─── Rutas base ───────────────────────────────────────────────────────────────
 const INPUTS_DIR = join(__dirname, "..", "styles", "inputs");
 const STYLES_DIR = join(__dirname, "..", "styles");
-const THEME_REF  = join(STYLES_DIR, "input.css");        // tokens compartidos
+const THEME_REF  = join(INPUTS_DIR, "input.css");         // tokens compartidos (src/styles/inputs/input.css)
 const DIST_DIR   = join(__dirname, "..", "..", "dist");
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────

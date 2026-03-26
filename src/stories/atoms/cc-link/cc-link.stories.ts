@@ -28,7 +28,7 @@ const meta: Meta = {
     color: {
       control: 'select',
       options: ['primary', 'primary-link', 'secondary', 'secondary-link', 'sucess', 'sucess-link', 'warning', 'warning-link', 'danger', 'danger-link', 'white', 'white-link', 'info', 'info-link', 'neutral', 'neutral-link',
-        'primary-white', 'secondary-white', 'sucess-white', 'warning-white', 'danger-white', 'info-white', 'neutral-white', 'gradient-get-2025', "gradient-caribequity", "gradient-caribequity-2", "yellow", "yellow-link", "green", "green-link", "purple", "purple-link", "caribe-yellow", "caribe-blue", "caribe-green", "caribe-red"
+        'primary-white', 'secondary-white', 'sucess-white', 'warning-white', 'danger-white', 'info-white', 'neutral-white'
       ],
       description: 'Link color variant',
       defaultValue: 'primary',
@@ -80,7 +80,7 @@ export const PrimaryWithIcon: Story = {
     label: 'Primary Link',
     size: 'base',
     radius: 'rounded-none',
-    color: 'gradient-get-2025',
+    color: 'primary',
     iconProps: {
       library: 'material',
       name: 'chevron_right',

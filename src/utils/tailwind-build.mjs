@@ -12,7 +12,7 @@ const __dirname = dirname(__filename);
 const COMPONENTS_DIR = join(__dirname, "..", "stories");
 const STYLES_DIR = join(__dirname, "..", "styles");
 const DIST_DIR = join(__dirname, "..", "..", "dist");
-const INPUT_CSS_PATH = join(STYLES_DIR, "input.css");
+const INPUT_CSS_PATH = join(STYLES_DIR, "inputs", "input.css");
 const GLOBAL_CSS_OUTPUT = join(STYLES_DIR, "tailwind.css");
 const DIST_CSS_OUTPUT = join(DIST_DIR, "tailwind.min.css");
 

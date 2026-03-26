@@ -94,22 +94,6 @@
   @apply bg-neutral-500 hover:bg-neutral-600 active:bg-neutral-600 text-white;
 }
 
-.button--color-caribe-yellow {
-  @apply bg-caribe-yellow hover:bg-yellow-600 active:bg-yellow-600 text-white border-2 border-solid border-caribe-yellow;
-}
-
-.button--color-caribe-blue {
-  @apply bg-caribe-blue hover:bg-cyan-600 active:bg-cyan-600 text-white border-2 border-solid border-caribe-blue;
-}
-
-.button--color-caribe-green {
-  @apply bg-caribe-green hover:bg-green-600 active:bg-green-600 text-white border-2 border-solid border-caribe-green;
-}
-
-.button--color-caribe-red {
-  @apply bg-caribe-red hover:bg-red-800 active:bg-red-800 text-white border-2 border-solid border-caribe-red;
-}
-
 .button--color-transparent {
   @apply bg-transparent hover:bg-neutral-300 active:bg-neutral-300 text-neutral-500 hover:text-neutral-700 p-2;
 }
