@@ -21,7 +21,7 @@
 
 /* === Primary === */
 .button--color-primary {
-  @apply bg-primary-500 hover:bg-primary-600 active:bg-primary-600 text-neutral-100 hover:text-white;
+  @apply bg-primary-500 hover:bg-primary-600 active:bg-primary-600 text-neutral-100 hover:text-white border-2 border-solid border-primary-500;
 }
 
 /* === Primary border=== */
