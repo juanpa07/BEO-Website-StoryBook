@@ -7,7 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-sky-200: oklch(90.1% 0.058 230.902);
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --default-transition-duration: 150ms;
@@ -18,27 +17,13 @@
     --font-montserrat: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
     --font-dancing: 'Dancing Script', 'Helvetica Neue', Arial, sans-serif;
     --font-fira-code: 'Fira Code', monospace;
-    --brand-color-1: #004e70;
-    --brand-color-2: #db4569;
-    --brand-color-3: #004e70;
-    --brand-color-4: #3d967a;
-    --brand-color-5: #faad17;
-    --brand-color-6: #4522ac;
+    --brand-color-1: #0f298f;
+    --brand-color-2: #80bc00;
+    --brand-color-3: #fde234;
     --color-primary: var(--brand-color-1);
     --color-secondary: var(--brand-color-2);
-    --color-blue: #004e70;
-    --color-green: #3d967a;
-    --color-yellow: #faad17;
-    --color-purple: #4522ac;
-    --color-magenta: #db4569;
+    --color-accent: var(--brand-color-3);
     --tw-shadow-color: rgba(0, 0, 0, 0.4);
-    --color-pillar-blue: #0090d6;
-    --color-pillar-orange: #ff481e;
-    --color-pillar-pink: #ff205b;
-    --color-caribe-yellow: #f0a91e;
-    --color-caribe-blue: #3fbfd1;
-    --color-caribe-green: #2f9877;
-    --color-caribe-red: #e1523b;
   }
 }
 @layer base {
@@ -248,41 +233,8 @@
   .text-secondary {
     color: var(--color-secondary);
   }
-  .text-blue {
-    color: var(--color-blue);
-  }
-  .text-green {
-    color: var(--color-green);
-  }
-  .text-yellow {
-    color: var(--color-yellow);
-  }
-  .text-purple {
-    color: var(--color-purple);
-  }
-  .text-magenta {
-    color: var(--color-magenta);
-  }
-  .text-pillar-blue {
-    color: var(--color-pillar-blue);
-  }
-  .text-pillar-orange {
-    color: var(--color-pillar-orange);
-  }
-  .text-pillar-pink {
-    color: var(--color-pillar-pink);
-  }
-  .text-caribe-yellow {
-    color: var(--color-caribe-yellow);
-  }
-  .text-caribe-blue {
-    color: var(--color-caribe-blue);
-  }
-  .text-caribe-green {
-    color: var(--color-caribe-green);
-  }
-  .text-caribe-red {
-    color: var(--color-caribe-red);
+  .text-accent {
+    color: var(--color-accent);
   }
 }
 @property --tw-rotate-x {
