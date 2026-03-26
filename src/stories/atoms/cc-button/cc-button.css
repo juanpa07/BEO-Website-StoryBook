@@ -66,8 +66,9 @@
 
 /* === white === */
 .button--color-black {
-  @apply bg-primary-500 hover:bg-primary-600 active:bg-primary-600 text-neutral-600 hover:text-white;
+  @apply bg-gray-700 text-white hover:bg-gray-900 active:bg-gray-900 border-solid border-gray-700;
 }
+
 
 /* === sucess === */
 .button--color-sucess {

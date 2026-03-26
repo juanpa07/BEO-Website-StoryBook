@@ -21,12 +21,10 @@
 
   /* Colors ebf */
   /* Marca */
-  --brand-color-1: #0f298f;
-  --brand-color-2: #80bc00;
-  --brand-color-3: #fde234;
-  
-  --brand-color-4: #000000;
-  --brand-color-5: #ffffff;
+  --brand-color-1: #004B87;
+  --brand-color-2: #0EA5E9;
+  --brand-color-3: #F59E0B;
+
 
   /* Escala Primary (Basada en Verde #80bc00) */
   --color-primary-950: color-mix(in srgb, var(--brand-color-1) 10%, black 90%);

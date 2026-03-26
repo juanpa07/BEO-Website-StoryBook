@@ -3,7 +3,7 @@ import "../src/styles/fonts.css";
 
 
 // Estilos globales de Tailwind preprocesados (variables, theme, base styles)
-import '../src/styles/tailwind.css';
+import '../src/styles/beo-tailwind.css';
 
 const preview: Preview = {
   parameters: {
