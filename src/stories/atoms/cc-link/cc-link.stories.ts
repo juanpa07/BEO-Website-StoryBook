@@ -1,6 +1,7 @@
 import type { LinkProperties } from '@interfaces/link.interface';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
+import { ifDefined } from 'lit/directives/if-defined.js'; // Necesario para limpiar el código
 import './cc-link';
 
 type LinkArgs = Partial<LinkProperties>;
@@ -13,13 +14,11 @@ const meta: Meta = {
     href: {
       control: 'text',
       description: 'Link destination URL',
-      defaultValue: '#',
     },
     target: {
       control: 'select',
       options: ['_self', '_blank', '_parent', '_top'],
       description: 'Specifies where to open the linked document',
-      defaultValue: '_self',
     },
     rel: {
       control: 'text',
@@ -27,32 +26,40 @@ const meta: Meta = {
     },
     color: {
       control: 'select',
-      options: ['primary', 'primary-link', 'secondary', 'secondary-link', 'sucess', 'sucess-link', 'warning', 'warning-link', 'danger', 'danger-link', 'white', 'white-link', 'info', 'info-link', 'neutral', 'neutral-link',
-        'primary-white', 'secondary-white', 'sucess-white', 'warning-white', 'danger-white', 'info-white', 'neutral-white'
+      options: [
+        'primary', 'primary-link', 'secondary', 'secondary-link', 'sucess', 'sucess-link', 
+        'warning', 'warning-link', 'danger', 'danger-link', 'white', 'white-link', 
+        'info', 'info-link', 'neutral', 'neutral-link', 'primary-white', 'secondary-white', 
+        'sucess-white', 'warning-white', 'danger-white', 'info-white', 'neutral-white'
       ],
       description: 'Link color variant',
-      defaultValue: 'primary',
     },
     size: {
       control: 'select',
       options: ['small', 'base', 'large'],
       description: 'Link size',
-      defaultValue: 'base',
     },
     radius: {
       control: 'select',
       options: ['rounded', 'rounded-md', 'rounded-lg', 'rounded-full', 'rounded-none'],
       description: 'Link border radius',
-      defaultValue: 'rounded-md',
     },
     label: {
       control: 'text',
       description: 'Link label text',
-      defaultValue: 'Link',
     },
     iconProps: {
       control: 'object',
       description: 'Icon configuration object for the link',
+    },
+  },
+  // AJUSTE 1: Configuración para que el código fuente sea dinámico
+  parameters: {
+    docs: {
+      source: {
+        type: 'dynamic',
+        language: 'html',
+      },
     },
   },
 };
@@ -60,18 +67,20 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<LinkArgs>;
 
+// AJUSTE 2: Quitamos los puntos (.) de las propiedades tipo string
 const Template = (args: LinkArgs) => html`
   <cc-link
-    .href=${args.href ?? ''}
-    .target=${args.target ?? ''}
-    .rel=${args.rel ?? ''}
-    .color=${args.color ?? ''}
-    .size=${args.size ?? ''}
-    .radius=${args.radius ?? ''}
-    .label=${args.label ?? ''}
-    .iconProps=${args.iconProps}
+    href=${ifDefined(args.href)}
+    target=${ifDefined(args.target)}
+    rel=${ifDefined(args.rel)}
+    color=${ifDefined(args.color)}
+    size=${ifDefined(args.size)}
+    radius=${ifDefined(args.radius)}
+    label=${ifDefined(args.label)}
+    .iconProps=${args.iconProps} 
   ></cc-link>
 `;
+// Nota: .iconProps mantiene el punto porque es un Objeto complejo.
 
 export const PrimaryWithIcon: Story = {
   args: {
@@ -132,13 +141,6 @@ export const WithIconLeft: Story = {
     },
   },
   render: Template,
-  parameters: {
-    docs: {
-      description: {
-        story: 'Button with icon on the left.',
-      },
-    },
-  },
 };
 
 export const WithIconRight: Story = {
@@ -156,48 +158,26 @@ export const WithIconRight: Story = {
     },
   },
   render: Template,
-  parameters: {
-    docs: {
-      description: {
-        story: 'Button with icon on the right.',
-      },
-    },
-  },
 };
 
 export const SizesShowcase: Story = {
   render: () => html`
     <div style="display: flex; gap: 16px;">
-      <cc-link href="#" radius='rounded-none' label="Small" size="small"></cc-link>
-      <cc-link href="#" radius='rounded-none' label="Base" size="base"></cc-link>
-      <cc-link href="#" radius='rounded-none' label="Large" size="large"></cc-link>
+      <cc-link href="#" radius="rounded-none" label="Small" size="small"></cc-link>
+      <cc-link href="#" radius="rounded-none" label="Base" size="base"></cc-link>
+      <cc-link href="#" radius="rounded-none" label="Large" size="large"></cc-link>
     </div>
   `,
-  parameters: {
-    docs: {
-      description: {
-        story: 'Demonstrates the different button sizes.',
-      },
-    },
-  },
 };
-
 
 export const linkWithIcons: Story = {
   render: () => html`
     <div style="display: flex; gap: 16px;">
       <cc-link href="#" radius="rounded-none" label="link 1" size="base" .iconProps=${{ library: 'material', name: 'search', size: 'medium', position: 'right' }}></cc-link>
-      <cc-link href="#" radius='rounded-none' label="link 2" size="base" .iconProps=${{ library: 'material', name: 'chevron_right', size: 'medium', position: 'right' }}></cc-link>
-      <cc-link href="#" radius='rounded-none' label="link 3" size="base" .iconProps=${{ library: 'material', name: 'search', size: 'medium', position: 'left' }}></cc-link>
+      <cc-link href="#" radius="rounded-none" label="link 2" size="base" .iconProps=${{ library: 'material', name: 'chevron_right', size: 'medium', position: 'right' }}></cc-link>
+      <cc-link href="#" radius="rounded-none" label="link 3" size="base" .iconProps=${{ library: 'material', name: 'search', size: 'medium', position: 'left' }}></cc-link>
     </div>
   `,
-  parameters: {
-    docs: {
-      description: {
-        story: 'Demonstrates the different button sizes.',
-      },
-    },
-  },
 };
 
 export const AllColorsShowcase: Story = {
@@ -209,23 +189,16 @@ export const AllColorsShowcase: Story = {
       color => html`
           <cc-link
             href="#"
-            .label=${color}
-            .color=${color}
-            .size=${'base'}
-            .radius=${'rounded-none'}
+            label=${color}
+            color=${color}
+            size="base"
+            radius="rounded-none"
           >
           </cc-link>
         `
     )}
     </div>
   `,
-  parameters: {
-    docs: {
-      description: {
-        story: 'Displaying all available button colors.',
-      },
-    },
-  },
 };
 
 export const AllColorsWithRoundedBorder: Story = {
@@ -235,20 +208,13 @@ export const AllColorsWithRoundedBorder: Story = {
     color => html`
           <cc-link
             href="#"
-            .label=${color}
-            .color=${color}
-            .size=${'base'}
+            label=${color}
+            color=${color}
+            size="base"
           >
           </cc-link>
         `
   )}
     </div>
   `,
-  parameters: {
-    docs: {
-      description: {
-        story: 'Displaying all available link colors with rounded border.',
-      },
-    },
-  },
 };

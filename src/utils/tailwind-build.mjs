@@ -12,24 +12,39 @@ const __dirname = dirname(__filename);
 const COMPONENTS_DIR = join(__dirname, "..", "stories");
 const STYLES_DIR = join(__dirname, "..", "styles");
 const DIST_DIR = join(__dirname, "..", "..", "dist");
-const INPUT_CSS_PATH = join(STYLES_DIR, "inputs", "input.css");
-const GLOBAL_CSS_OUTPUT = join(STYLES_DIR, "tailwind.css");
-const DIST_CSS_OUTPUT = join(DIST_DIR, "tailwind.min.css");
+const INPUTS_DIR = join(STYLES_DIR, "inputs");
+
+// Configuración de archivos de entrada/salida por marca
+const BRAND_CONFIGS = [
+  { input: "input.css", output: "tailwind.css", distOutput: "tailwind.min.css" },
+  { input: "beo-input.css", output: "beo-tailwind.css", distOutput: "beo-tailwind.min.css" },
+  { input: "ebf-input.css", output: "ebf-tailwind.css", distOutput: "ebf-tailwind.min.css" },
+];
 
 /**
- * Procesa el CSS global de Tailwind (input.css -> tailwind.css)
+ * Procesa el CSS global de Tailwind para una marca específica
  * También genera versión minificada en dist/
  */
-async function processGlobalCss() {
+async function processGlobalCss(config) {
+  const inputPath = join(INPUTS_DIR, config.input);
+  const outputPath = join(STYLES_DIR, config.output);
+  const distOutputPath = join(DIST_DIR, config.distOutput);
+
+  // Verificar que el archivo de entrada existe
+  if (!existsSync(inputPath)) {
+    console.log(`⚠️  Archivo no encontrado: ${config.input}, saltando...`);
+    return;
+  }
+
   try {
-    const inputCss = readFileSync(INPUT_CSS_PATH, "utf8");
+    const inputCss = readFileSync(inputPath, "utf8");
 
     // Procesar con Tailwind (versión no minificada para desarrollo)
     const result = await postcss([tailwindcss()]).process(inputCss, {
-      from: INPUT_CSS_PATH,
+      from: inputPath,
     });
-    writeFileSync(GLOBAL_CSS_OUTPUT, result.css, "utf8");
-    console.log(`✅ Global CSS generado: tailwind.css`);
+    writeFileSync(outputPath, result.css, "utf8");
+    console.log(`✅ Global CSS generado: ${config.output}`);
 
     // Generar versión minificada para dist/
     if (!existsSync(DIST_DIR)) {
@@ -40,14 +55,13 @@ async function processGlobalCss() {
       tailwindcss(),
       cssnano({ preset: 'default' })
     ]).process(inputCss, {
-      from: INPUT_CSS_PATH,
+      from: inputPath,
     });
-    writeFileSync(DIST_CSS_OUTPUT, minified.css, "utf8");
-    console.log(`✅ Global CSS minificado: dist/tailwind.min.css`);
+    writeFileSync(distOutputPath, minified.css, "utf8");
+    console.log(`✅ Global CSS minificado: dist/${config.distOutput}`);
 
   } catch (error) {
-    console.error(`❌ Error al procesar CSS global:`, error.message || error);
-    process.exit(1);
+    console.error(`❌ Error al procesar ${config.input}:`, error.message || error);
   }
 }
 
@@ -61,7 +75,8 @@ async function processTailwindToLit(inputCss, outputPath) {
 
   try {
     const componentCss = readFileSync(inputCss, "utf8");
-    const combinedCss = `@reference "${INPUT_CSS_PATH}";\n\n${componentCss}`;
+    const defaultInputPath = join(INPUTS_DIR, "input.css");
+    const combinedCss = `@reference "${defaultInputPath}";\n\n${componentCss}`;
 
     // Procesar con Tailwind + cssnano para minificar
     const result = await postcss([
@@ -115,8 +130,10 @@ function findComponentCssFiles(dir, files = []) {
 // Ejecutar build
 console.log("🚀 Compilando Tailwind CSS...\n");
 
-// 1. Procesar CSS global
-await processGlobalCss();
+// 1. Procesar CSS global para cada marca
+for (const config of BRAND_CONFIGS) {
+  await processGlobalCss(config);
+}
 
 // 2. Procesar CSS de componentes
 const componentFiles = findComponentCssFiles(COMPONENTS_DIR);
