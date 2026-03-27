@@ -101,10 +101,12 @@ async function processEntry(filename, isBuild) {
   try {
     const rawCss = readFileSync(inputPath, "utf8");
 
-    // Inyectar @reference para heredar el @theme sin duplicar tokens
-    // Sólo si el archivo no es el propio input.css del theme
+    // Solo agregar @reference si el archivo NO tiene su propio bloque @theme
+    // Los archivos con @theme propio deben procesarse de forma independiente
+    // para que sus CSS custom properties se exporten correctamente
     const isThemeFile = inputPath === THEME_REF;
-    const processedCss = isThemeFile
+    const hasOwnTheme = /@theme\s*\{/.test(rawCss);
+    const processedCss = (isThemeFile || hasOwnTheme)
       ? rawCss
       : `@reference "${THEME_REF}";\n\n${rawCss}`;
 

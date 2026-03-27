@@ -35,7 +35,7 @@ function detectActiveBrand() {
  * Extrae variables del bloque @theme del CSS
  */
 function extractThemeVars(css) {
-  const themeMatch = css.match(/@theme\s+inline\s*\{([\s\S]*?)\n\}/);
+  const themeMatch = css.match(/@theme(?:\s+inline)?\s*\{([\s\S]*?)\n\}/);
   if (!themeMatch) return {};
 
   const themeBlock = themeMatch[1];

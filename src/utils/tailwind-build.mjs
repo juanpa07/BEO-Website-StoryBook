@@ -13,6 +13,25 @@ const COMPONENTS_DIR = join(__dirname, "..", "stories");
 const STYLES_DIR = join(__dirname, "..", "styles");
 const DIST_DIR = join(__dirname, "..", "..", "dist");
 const INPUTS_DIR = join(STYLES_DIR, "inputs");
+const PREVIEW_PATH = join(__dirname, "..", "..", ".storybook", "preview.ts");
+
+/**
+ * Detecta el tema activo leyendo el import en preview.ts
+ */
+function detectActiveBrand() {
+  try {
+    const previewContent = readFileSync(PREVIEW_PATH, "utf8");
+    const match = previewContent.match(/import\s+['"].*\/(\w+)-tailwind\.css['"]/);
+    if (match) {
+      const brand = match[1];
+      if (brand === "tailwind") return "input.css";
+      return `${brand}-input.css`;
+    }
+  } catch (error) {
+    console.warn("⚠️  No se pudo leer preview.ts, usando input.css por defecto");
+  }
+  return "input.css";
+}
 
 // Configuración de archivos de entrada/salida por marca
 const BRAND_CONFIGS = [
@@ -75,8 +94,10 @@ async function processTailwindToLit(inputCss, outputPath) {
 
   try {
     const componentCss = readFileSync(inputCss, "utf8");
-    const defaultInputPath = join(INPUTS_DIR, "input.css");
-    const combinedCss = `@reference "${defaultInputPath}";\n\n${componentCss}`;
+    // Usar el tema activo para @reference (así los fallbacks usan los colores de marca correctos)
+    const activeInputFile = detectActiveBrand();
+    const activeInputPath = join(INPUTS_DIR, activeInputFile);
+    const combinedCss = `@reference "${activeInputPath}";\n\n${componentCss}`;
 
     // Procesar con Tailwind + cssnano para minificar
     const result = await postcss([

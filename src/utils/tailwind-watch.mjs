@@ -44,7 +44,7 @@ function detectActiveBrand() {
  * Extrae variables del bloque @theme del CSS
  */
 function extractThemeVars(css) {
-  const themeMatch = css.match(/@theme\s+inline\s*\{([\s\S]*?)\n\}/);
+  const themeMatch = css.match(/@theme(?:\s+inline)?\s*\{([\s\S]*?)\n\}/);
   if (!themeMatch) return {};
 
   const themeBlock = themeMatch[1];
@@ -141,6 +141,7 @@ async function processGlobalCss() {
 /**
  * Procesa un archivo CSS de componente con Tailwind y genera el archivo .lit.ts
  * Solo genera los estilos específicos del componente usando @reference
+ * Usa el archivo de input del tema activo para obtener los valores correctos de marca
  */
 async function processTailwindToLit(inputCss, outputPath = "styles") {
   const componentName = basename(outputPath);
@@ -150,8 +151,12 @@ async function processTailwindToLit(inputCss, outputPath = "styles") {
     // Leer el CSS del componente
     const componentCss = readFileSync(inputCss, "utf8");
 
-    // Crear CSS con @reference usando ruta absoluta
-    const combinedCss = `@reference "${INPUT_CSS_PATH}";\n\n${componentCss}`;
+    // Usar el tema activo para @reference (así los fallbacks usan los colores de marca correctos)
+    const activeInputFile = detectActiveBrand();
+    const activeInputPath = join(INPUTS_DIR, activeInputFile);
+
+    // Crear CSS con @reference usando el tema activo
+    const combinedCss = `@reference "${activeInputPath}";\n\n${componentCss}`;
 
     // Procesar con PostCSS + Tailwind
     const result = await postcss([tailwindcss()]).process(combinedCss, {
