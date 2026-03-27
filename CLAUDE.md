@@ -115,3 +115,12 @@ Las importaciones de utilidades de test vienen de `storybook/test` (`expect`, `f
 | `@utils` | `src/utils` |
 | `@styles` | `src/styles` |
 | `@enums` | `src/enums` |
+
+
+## Storybook Stories
+
+Para **crear un story nuevo** o **migrar uno existente** a la convención actual,
+consulta siempre el skill: `@.claude/skills/storybook-story/SKILL.md`
+
+El story de referencia canónica del proyecto es:
+`src/stories/atoms/cc-icon/cc-icon.stories.ts`

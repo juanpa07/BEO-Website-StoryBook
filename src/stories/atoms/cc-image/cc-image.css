@@ -1,0 +1,53 @@
+.image {
+  @apply object-contain w-auto h-full block mx-auto;
+}
+
+/* Border radius none */
+.image--radius-none {
+  @apply rounded-none;
+}
+
+/* Border radius xs */
+.image--radius-xs {
+  @apply rounded-xs;
+}
+
+/* Border radius sm*/
+.image--radius-sm {
+  @apply rounded-sm;
+}
+
+/* Border radius md*/
+.image--radius-md {
+  @apply rounded-md;
+}
+
+/* Border radius lg */
+.image--radius-lg {
+  @apply rounded-lg;
+}
+
+/* Border radius xl */
+.image--radius-xl {
+  @apply rounded-xl;
+}
+
+/* Border radius 2xl */
+.image--radius-2xl {
+  @apply rounded-2xl;
+}
+
+/* Border radius 3xl */
+.image--radius-3xl {
+  @apply rounded-3xl;
+}
+
+/* Border radius 4xl */
+.image--radius-4xl {
+  @apply rounded-4xl;
+}
+
+/* Border radius full */
+.image--radius-full {
+  @apply rounded-full;
+}

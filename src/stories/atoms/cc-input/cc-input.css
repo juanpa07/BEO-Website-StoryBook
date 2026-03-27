@@ -1,0 +1,11 @@
+input {
+  @apply w-full max-w-sm text-base border bg-gray-100 border-gray-300 rounded-xl inset-y-0 py-3 pl-3 pr-10;
+}
+
+:host(.errorRequired) input {
+  @apply text-(--color-error,red) border-(--color-error-border,red) bg-(--color-error-background,red) border-1 border-solid;
+}
+
+:host(.errorRequired) input::placeholder {
+  @apply text-(--color-error,red);
+}

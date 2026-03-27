@@ -41,6 +41,9 @@
     --color-primary: var(--brand-color-1);
     --color-secondary: var(--brand-color-2);
     --color-accent: var(--brand-color-3);
+    --color-error: #e1523b;
+    --color-error-border: #e1523b;
+    --color-error-background: #fecaca;
   }
 }
 @layer base {
@@ -200,6 +203,9 @@
   }
   .flex {
     display: flex;
+  }
+  .inline {
+    display: inline;
   }
   .flex-grow {
     flex-grow: 1;
