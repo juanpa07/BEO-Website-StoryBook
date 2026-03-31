@@ -6,14 +6,14 @@
 import { LitElement, css, html } from 'lit';
 import type { CSSResultGroup, TemplateResult } from 'lit';
 import { defineCustomElement } from '@helper/defineCustomElement';
-import type { renderLinkElements } from '@utils/renderLinkElements.ts';
+import { renderLinkElements } from '@utils/renderLinkElements';
 import { property } from 'lit/decorators.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import componentStyles from './cc-content-info.lit.ts';
 import type { ContentInfoProperties } from '@interfaces/contentInfo.interface';
 import type { LinkProperties } from '@interfaces/link.interface';
 import type { ImageProperties } from '@interfaces/image.interface';
-import type { AlignItems } from '@enums/alignItems.enum';
+import { AlignItems } from '../../../enums/alignItems.enum';
 
 
 
