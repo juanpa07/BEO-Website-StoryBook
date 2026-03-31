@@ -1,0 +1,490 @@
+/* Main component */
+.content-info {
+  @apply flex flex-col;
+}
+
+.content-info__links {
+  @apply flex flex-wrap gap-2 mt-5 w-full md:w-auto;
+}
+
+.content-info__buttons--align-start {
+  @apply justify-start;
+}
+
+.content-info__buttons--align-center {
+  @apply justify-center;
+}
+
+.content-info__buttons--align-end {
+  @apply justify-end;
+}
+
+
+/* =============== */
+/* === Colors ==== */
+/* =============== */
+/* Primary color */
+.content-info__title--color-primary,
+.content-info__subtitle--color-primary,
+.content-info__description--color-primary {
+  @apply text-(--color-primary-500);
+}
+
+/* Secondary color */
+.content-info__title--color-secondary,
+.content-info__subtitle--color-secondary,
+.content-info__description--color-secondary {
+  @apply text-(--color-secondary-500);
+}
+
+/* neutral color */
+.content-info__title--color-neutral,
+.content-info__subtitle--color-neutral,
+.content-info__description--color-neutral {
+  @apply text-neutral-500;
+}
+
+/* Neutral dark color */
+.content-info__title--color-neutral-dark,
+.content-info__subtitle--color-neutral-dark,
+.content-info__description--color-neutral-dark {
+  @apply text-neutral-700;
+}
+
+/* Gray color */
+.content-info__title--color-gray-lighten-1,
+.content-info__subtitle--color-gray-lighten-1,
+.content-info__description--color-gray-lighten-1 {
+  @apply text-gray-lighten-1;
+}
+
+.content-info__title--color-gray,
+.content-info__subtitle--color-gray,
+.content-info__description--color-gray {
+  @apply text-gray-500;
+}
+
+.content-info__title--color-gray-light,
+.content-info__subtitle--color-gray-light,
+.content-info__description--color-gray-light {
+  @apply text-gray-light;
+}
+
+.content-info__title--color-gray-dark,
+.content-info__subtitle--color-gray-dark,
+.content-info__description--color-gray-dark {
+  @apply text-gray-dark;
+}
+
+/* Back color */
+.content-info__title--color-black,
+.content-info__subtitle--color-black,
+.content-info__description--color-black {
+  @apply text-black;
+}
+
+/* White color */
+.content-info__title--color-white,
+.content-info__subtitle--color-white,
+.content-info__description--color-white {
+  @apply text-white;
+}
+
+/* Blue color */
+.content-info__title--color-blue-darken-2,
+.content-info__subtitle--color-blue-darken-2,
+.content-info__description--color-blue-darken-2 {
+  @apply text-blue-darken-2;
+}
+
+.content-info__title--color-blue-darken-1,
+.content-info__subtitle--color-blue-darken-1,
+.content-info__description--color-blue-darken-1 {
+  @apply text-blue-darken-1;
+}
+
+.content-info__title--color-blue,
+.content-info__subtitle--color-blue,
+.content-info__description--color-blue {
+  @apply text-blue;
+}
+
+.content-info__title--color-blue-lighten-1,
+.content-info__subtitle--color-blue-lighten-1,
+.content-info__description--color-blue-lighten-1 {
+  @apply text-blue-lighten-1;
+}
+
+.content-info__title--color-blue-lighten-2,
+.content-info__subtitle--color-blue-lighten-2,
+.content-info__description--color-blue-lighten-2 {
+  @apply text-blue-lighten-2;
+}
+
+/* Magenta color */
+.content-info__title--color-magenta-darken-2,
+.content-info__subtitle--color-magenta-darken-2,
+.content-info__description--color-magenta-darken-2 {
+  @apply text-magenta-darken-2;
+}
+
+.content-info__title--color-magenta-darken-1,
+.content-info__subtitle--color-magenta-darken-1,
+.content-info__description--color-magenta-darken-1 {
+  @apply text-magenta-darken-1;
+}
+
+.content-info__title--color-magenta,
+.content-info__subtitle--color-magenta,
+.content-info__description--color-magenta {
+  @apply text-magenta;
+}
+
+.content-info__title--color-magenta-lighten-1,
+.content-info__subtitle--color-magenta-lighten-1,
+.content-info__description--color-magenta-lighten-1 {
+  @apply text-magenta-lighten-1;
+}
+
+.content-info__title--color-magenta-lighten-2,
+.content-info__subtitle--color-magenta-lighten-2,
+.content-info__description--color-magenta-lighten-2 {
+  @apply text-magenta-lighten-2;
+}
+
+/* Green color */
+.content-info__title--color-green-darken-2,
+.content-info__subtitle--color-green-darken-2,
+.content-info__description--color-green-darken-2 {
+  @apply text-green-darken-2;
+}
+
+.content-info__title--color-green-darken-1,
+.content-info__subtitle--color-green-darken-1,
+.content-info__description--color-green-darken-1 {
+  @apply text-green-darken-1;
+}
+
+.content-info__title--color-green,
+.content-info__subtitle--color-green,
+.content-info__description--color-green {
+  @apply text-green;
+}
+
+.content-info__title--color-green-lighten-1,
+.content-info__subtitle--color-green-lighten-1,
+.content-info__description--color-green-lighten-1 {
+  @apply text-green-lighten-1;
+}
+
+.content-info__title--color-green-lighten-2,
+.content-info__subtitle--color-green-lighten-2,
+.content-info__description--color-green-lighten-2 {
+  @apply text-green-lighten-2;
+}
+
+/* Yellow color */
+.content-info__title--color-yellow-darken-2,
+.content-info__subtitle--color-yellow-darken-2,
+.content-info__description--color-yellow-darken-2 {
+  @apply text-yellow-darken-2;
+}
+
+.content-info__title--color-yellow-darken-1,
+.content-info__subtitle--color-yellow-darken-1,
+.content-info__description--color-yellow-darken-1 {
+  @apply text-yellow-darken-1;
+}
+
+.content-info__title--color-yellow,
+.content-info__subtitle--color-yellow,
+.content-info__description--color-yellow {
+  @apply text-yellow;
+}
+
+.content-info__title--color-yellow-lighten-1,
+.content-info__subtitle--color-yellow-lighten-1,
+.content-info__description--color-yellow-lighten-1 {
+  @apply text-yellow-lighten-1;
+}
+
+.content-info__title--color-yellow-lighten-2,
+.content-info__subtitle--color-yellow-lighten-2,
+.content-info__description--color-yellow-lighten-2 {
+  @apply text-yellow-lighten-2;
+}
+
+/* Purple color */
+.content-info__title--color-purple-darken-2,
+.content-info__subtitle--color-purple-darken-2,
+.content-info__description--color-purple-darken-2 {
+  @apply text-purple-darken-2;
+}
+
+.content-info__title--color-purple,
+.content-info__subtitle--color-purple,
+.content-info__description--color-purple {
+  @apply text-purple;
+}
+
+.content-info__title--color-pillar-blue,
+.content-info__subtitle--color-pillar-blue,
+.content-info__description--color-pillar-blue {
+  @apply text-pillar-blue;
+}
+
+.content-info__title--color-pillar-orange,
+.content-info__subtitle--color-pillar-orange,
+.content-info__description--color-pillar-orange {
+  @apply text-pillar-orange;
+}
+
+.content-info__title--color-pillar-pink,
+.content-info__subtitle--color-pillar-pink,
+.content-info__description--color-pillar-pink {
+  @apply text-pillar-pink;
+}
+
+/* Caribe colors */
+.content-info__title--color-caribe-yellow,
+.content-info__subtitle--color-caribe-yellow,
+.content-info__description--color-caribe-yellow {
+  @apply text-caribe-yellow;
+}
+
+
+.content-info__title--color-caribe-blue,
+.content-info__subtitle--color-caribe-blue,
+.content-info__description--color-caribe-blue {
+  @apply text-caribe-blue;
+}
+
+.content-info__title--color-caribe-green,
+.content-info__subtitle--color-caribe-green,
+.content-info__description--color-caribe-green {
+  @apply text-caribe-green;
+}
+
+.content-info__title--color-caribe-red,
+.content-info__subtitle--color-caribe-red,
+.content-info__description--color-caribe-red {
+  @apply text-caribe-red;
+}
+
+/* =============== */
+/* == Text size == */
+/* =============== */
+h1,
+.content-info__title--size-h1,
+.content-info__subtitle--size-h1 {
+  @apply text-5xl lg:text-6xl mb-5 font-semibold;
+}
+
+h2,
+.content-info__title--size-h2,
+.content-info__subtitle--size-h2 {
+  @apply text-4xl lg:text-5xl mb-4 font-semibold;
+}
+
+h3,
+.content-info__title--size-h3,
+.content-info__subtitle--size-h3 {
+  @apply text-3xl lg:text-4xl mb-4 font-semibold;
+}
+
+h4,
+.content-info__title--size-h4,
+.content-info__subtitle--size-h4 {
+  @apply text-2xl md:text-3xl mb-2 font-semibold;
+}
+
+h5,
+.content-info__title--size-h5,
+.content-info__subtitle--size-h5 {
+  @apply text-xl lg:text-2xl mb-1 font-semibold;
+}
+
+h6,
+.content-info__title--size-h6,
+.content-info__subtitle--size-h6 {
+  @apply text-lg md:text-xl mb-1 font-semibold;
+}
+
+.content-info__title--size-4xl,
+.content-info__subtitle--size-4xl {
+  @apply text-4xl mb-3;
+}
+
+.content-info__title--size-5xl,
+.content-info__subtitle--size-5xl {
+  @apply text-5xl mb-3;
+}
+
+.content-info__title--size-6xl,
+.content-info__subtitle--size-6xl {
+  @apply text-4xl md:text-5xl lg:text-6xl mb-3;
+}
+
+.content-info__title--size-7xl,
+.content-info__subtitle--size-7xl {
+  @apply text-5xl md:text-6xl lg:text-7xl mb-3;
+}
+
+.content-info__title--size-8xl,
+.content-info__subtitle--size-8xl {
+  @apply text-6xl md:text-7xl lg:text-8xl mb-3;
+}
+
+.content-info__title--size-9xl,
+.content-info__subtitle--size-9xl {
+  @apply text-7xl md:text-8xl lg:text-9xl mb-3;
+}
+
+.content-info__title--size-xs,
+.content-info__subtitle--size-xs,
+.content-info__description--size-xs {
+  @apply text-xs text-xs/5;
+}
+
+.content-info__title--size-sm,
+.content-info__subtitle--size-sm,
+.content-info__description--size-sm {
+  @apply text-sm;
+}
+
+.content-info__title--size-base,
+.content-info__subtitle--size-base,
+.content-info__description--size-base {
+  @apply text-base;
+}
+
+.content-info__title--size-lg,
+.content-info__subtitle--size-lg,
+.content-info__description--size-lg {
+  @apply text-lg;
+}
+
+.content-info__title--size-xl,
+.content-info__subtitle--size-xl,
+.content-info__description--size-xl {
+  @apply text-xl;
+}
+
+.content-info__title--size-2xl,
+.content-info__subtitle--size-2xl,
+.content-info__description--size-2xl {
+  @apply text-2xl;
+}
+
+.content-info__title--size-3xl,
+.content-info__subtitle--size-3xl,
+.content-info__description--size-3xl {
+  @apply text-2xl lg:text-3xl;
+}
+
+.content-info__description--size-4xl {
+  @apply text-4xl;
+}
+
+.content-info__description--size-5xl {
+  @apply text-5xl;
+}
+
+/* =============== */
+/* == Text align == */
+/* =============== */
+.content-info--align-start {
+  @apply text-center md:text-left items-center md:items-start;
+}
+
+.content-info--align-center {
+  @apply text-center items-center;
+}
+
+.content-info--align-end {
+  @apply text-center md:text-right items-center md:items-end;
+}
+
+/* ================= */
+/* == Font Family == */
+/* ================= */
+.content-info__title--font-open-sans,
+.content-info__subtitle--font-open-sans,
+.content-info__description--font-open-sans {
+  @apply font-open-sans;
+}
+
+.content-info__title--font-roboto,
+.content-info__subtitle--font-roboto,
+.content-info__description--font-roboto {
+  @apply font-roboto;
+}
+
+.content-info__title--font-montserrat,
+.content-info__subtitle--font-montserrat,
+.content-info__description--font-montserrat {
+  @apply font-montserrat;
+}
+
+.content-info__title--font-dancing,
+.content-info__subtitle--font-dancing,
+.content-info__description--font-dancing {
+  @apply font-dancing;
+}
+
+/* ================== */
+/* == Description == */
+/* ================== */
+.content-info__description {
+  @apply my-3;
+
+  ul.bullet-list {
+    list-style-type: disc;
+    padding-left: 40px;
+    margin: 17px 0 0;
+
+    li {
+      margin-top: 10px;
+    }
+  }
+}
+
+/* ================== */
+/* ==== Image == */
+/* ================== */
+.content-info__image {
+  @apply mb-7;
+}
+
+.content-info__image--size-3xs {
+  @apply w-3xs;
+}
+
+.content-info__image--size-2xs {
+  @apply max-sm:w-3xs w-2xs;
+}
+
+.content-info__image--size-xs {
+  @apply w-full md:w-xs;
+}
+
+.content-info__image--size-sm {
+  @apply w-full md:w-sm;
+}
+
+.content-info__image--size-md {
+  @apply w-full md:w-md;
+}
+
+.content-info__image--size-lg {
+  @apply w-full md:w-lg;
+}
+
+.content-info__image--size-xl {
+  @apply w-full md:w-xl;
+}
+
+.content-info__image--size-full {
+  @apply w-full;
+}
+
