@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/web-components";
 import { html } from "lit";
 import "./cc-content-info";
 import type { ContentInfoProperties } from "@interfaces/contentInfo.interface";
-import type { AlignItems } from "@enums/alignItems.enum";
+import { AlignItems } from "@enums/alignItems.enum";
 
 // Ajusta tus opciones/arrays a lo que uses. Pasar esto a un helper de constantes para facilitar la carga repetitivas de opciones
 const colors = ["primary", "secondary", "blue-darken-2", "blue-darken-1", "blue", "blue-lighten-1", "blue-lighten-2", "magenta-darken-2", "magenta-darken-1", "magenta", "magenta-lighten-1", "magenta-lighten-2", "green-darken-2", "green-darken-1", "green", "green-lighten-1", "green-lighten-2", "yellow-darken-2", "yellow-darken-1", "yellow", "yellow-lighten-1", "yellow-lighten-2", "purple", "gray-lighten-1", "gray", "gray-light", "gray-dark", "neutral", "neutral-dark", "white", "black", "caribequity", "caribequity-2", "caribe-yellow", "caribe-blue", "caribe-green", "caribe-red"];
