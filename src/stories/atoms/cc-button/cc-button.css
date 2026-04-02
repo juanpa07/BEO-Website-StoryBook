@@ -4,15 +4,11 @@
 }
 
 .button {
-  @apply transition-colors duration-300 cursor-pointer font-main text-shadow-sm my-2 mr-2;
+  @apply transition-colors duration-300 cursor-pointer font-main my-2 mr-2;
 }
 
 .button--span {
   @apply flex items-center flex-nowrap gap-2;
-}
-
-.button--span cc-icon{
-  @apply text-shadow-sm;
 }
 
 /* =============== */
@@ -41,7 +37,7 @@
 
 /* === secondary === */
 .button--color-secondary {
-  @apply bg-secondary-500 hover:bg-secondary-600 active:bg-secondary-600 text-white border-2 border-solid border-secondary-500;
+  @apply bg-secondary-600 hover:bg-secondary-700 active:bg-secondary-700 text-white border-2 border-solid border-secondary-600;
 }
 
 /* === Secondary border === */

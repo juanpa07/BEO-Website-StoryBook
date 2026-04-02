@@ -3,8 +3,6 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
-import tailwindcss from '@tailwindcss/vite'
-
 const dirname =
   typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
@@ -24,9 +22,6 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, './src/utils')
     }
   },
-  plugins: [
-    tailwindcss(),
-  ],
   test: {
     projects: [
       {
