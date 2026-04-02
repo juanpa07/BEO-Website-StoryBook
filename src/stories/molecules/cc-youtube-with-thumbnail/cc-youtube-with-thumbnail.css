@@ -3,7 +3,7 @@
 }
 
 .video__thumbnail {
-  @apply absolute inset-0 bg-cover bg-center bg-no-repeat z-[1] text-white hover:text-lime-500 flex items-center justify-center transition-colors duration-300;
+  @apply absolute inset-0 bg-cover bg-center bg-no-repeat z-[1] text-white flex items-center justify-center transition-colors duration-300;
 }
 
 .video__thumbnail--hidden {
@@ -13,6 +13,7 @@
 .video__play-icon {
   @apply bg-neutral-800/90 rounded-full w-24 h-24 p-1 flex items-center justify-center text-8xl transition-transform duration-300 ease-in-out;
 }
+
 
 .video__thumbnail:hover .video__play-icon {
   @apply scale-130;

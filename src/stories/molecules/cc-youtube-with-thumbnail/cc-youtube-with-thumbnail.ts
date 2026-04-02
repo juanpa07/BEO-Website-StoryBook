@@ -1,14 +1,13 @@
-import { LitElement, html, css } from 'lit';
-import type { CSSResultGroup, TemplateResult } from 'lit';
-import { property } from 'lit/decorators.js';
-
+import { LitElement, html, css} from 'lit';
+import type { TemplateResult, CSSResultGroup } from 'lit';
 import { defineCustomElement } from '@helper/defineCustomElement';
-import type { YoutubeWithThumbnailProperties } from '@interfaces/youtubeWithThumbnail.interface';
-
+import { property } from 'lit/decorators.js';
 import componentStyles from './cc-youtube-with-thumbnail.lit';
 
-import '../../atoms/cc-youtube/cc-youtube';
+import type { YoutubeWithThumbnailProperties } from '@interfaces/youtubeWithThumbnail.interface';
+
 import '../../atoms/cc-image/cc-image';
+import '../../atoms/cc-youtube/cc-youtube';
 import '../../atoms/cc-icon/cc-icon';
 
 export class CcYoutubeWithThumbnail extends LitElement implements YoutubeWithThumbnailProperties {
@@ -17,17 +16,20 @@ export class CcYoutubeWithThumbnail extends LitElement implements YoutubeWithThu
   @property({ type: Object }) videoId: string = '';
   @property({ type: Object }) thumbnail: string = '';
 
+  // Opcionales internos
   @property({ type: Boolean }) autoplay: boolean = false;
   @property({ type: Boolean }) showThumbnail: boolean = true;
   @property({ type: Boolean }) modestBranding: boolean = false;
 
   private renderYoutubeVideo(): TemplateResult {
-    if (!this.videoId) return html``;
-    return html`<cc-youtube .videoId=${this.videoId} .autoplay=${this.autoplay}></cc-youtube>`;
+    if (!this.videoId) return html``; // Si videoId no existe o está vacío, no renderizar nada
+
+    return html` <cc-youtube .videoId=${this.videoId} .autoplay=${this.autoplay}></cc-youtube> `;
   }
 
   private renderThumbnail(): TemplateResult {
-    if (!this.thumbnail) return html``;
+    if (!this.thumbnail) return html``; // Si videoId no existe o está vacío, no renderizar nada
+
     return html`
       <div
         class="video__thumbnail ${this.showThumbnail && !this.autoplay

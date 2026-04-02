@@ -1,0 +1,56 @@
+/* === general === */
+.metric-card {
+  @apply flex-1 p-4 border-l-7 border-solid border-t-0 border-r-0 border-b-0;
+}
+
+.metric-card__value{
+  @apply text-7xl font-semibold;
+}
+.metric-card__description {
+  @apply text-base text-gray-400;
+}
+
+/* === background card === */
+.metric-card--background-transparent {
+  @apply bg-transparent;
+}
+
+.metric-card--background-white-glass {
+  @apply bg-white/20 backdrop-blur-lg;
+}
+
+.metric-card--background-black-glass {
+  @apply bg-black/20 backdrop-blur-lg;
+}
+
+/* === color card === */
+.metric-card--color-white {
+  @apply border-white;
+}
+.metric-card__value--color-white {
+  @apply text-white;
+}
+
+.metric-card--color-primary {
+  @apply border-(--color-primary-500);
+}
+
+.metric-card__value--color-primary {
+  @apply text-(--color-primary-500);
+}
+
+.metric-card--color-secondary {
+  @apply border-(--color-secondary-500);
+}
+
+.metric-card__value--color-secondary {
+  @apply text-(--color-secondary-500);
+}
+
+.metric-card--color-neutral {
+  @apply border-neutral-600;
+}
+
+.metric-card__value--color-neutral {
+  @apply text-neutral-600;
+}

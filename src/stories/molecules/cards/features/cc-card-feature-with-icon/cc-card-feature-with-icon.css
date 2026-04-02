@@ -1,0 +1,24 @@
+/* === Feature card with icon === */
+.features-cards {
+  @apply grid gap-x-7 gap-y-25 pt-10 justify-center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  @apply relative flex flex-col min-w-0 break-words bg-white bg-clip-border border border-[rgba(0,0,0,0.125)] rounded-lg cursor-pointer text-center;
+  box-shadow: 1px 1px 31px #e6e6e6;
+}
+
+.card__icon {
+  @apply inline-block absolute -top-17 left-1/2 -translate-x-1/2 w-[130px] h-[100px];
+  transform: translateX(-50%);
+}
+
+.card__icon--top {
+  @apply inline-block absolute -top-17 left-1/2 -translate-x-1/2 w-[130px] h-[100px];
+  transform: translateX(-50%);
+}
+
+.card-body {
+  @apply pt-17 pb-10 px-7;
+}
