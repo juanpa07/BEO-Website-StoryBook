@@ -1,0 +1,18 @@
+@reference "../../../styles/inputs/input.css";
+
+
+.progressbar {
+    @apply bg-gray-200 w-full h-3 max-w-sm rounded-xl;
+}
+
+.progressbar__fill {
+    @apply h-3 rounded-xl transition-[width] duration-[700ms] ease-linear;
+}
+
+.progressbar__fill--color-primary{
+    @apply  bg-(--color-primary-500);
+}
+
+.progressbar__fill--color-secondary{
+    @apply  bg-(--color-secondary-500);
+}
