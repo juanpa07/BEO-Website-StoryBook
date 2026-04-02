@@ -1,0 +1,3 @@
+.pagination {
+  @apply flex justify-center items-center list-none p-0 gap-1;
+}
