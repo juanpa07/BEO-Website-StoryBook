@@ -1,5 +1,0 @@
-@import '../../../styles/input.css';
-
-  :host {
-    @apply block shadow-md bg-white  p-6  border border-solid border-gray-200 rounded-xl;
-  }
