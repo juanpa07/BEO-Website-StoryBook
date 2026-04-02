@@ -71,20 +71,19 @@ export class CcBanner extends LitElement implements BannerProperties {
   };
 
   private renderContentInfo(): TemplateResult {
-    const contentInfo = document.createElement('idblabext-content-info');
+    const contentInfo = document.createElement('cc-content-info');
     Object.assign(contentInfo, this.bannerContent.contentInfo);
     return html`${contentInfo}`;
   }
 
   private renderContentInfoWithMultimedia(): TemplateResult {
-    console.log("bannerContent:", this.bannerContent);
-    const contentInfoWithMultimedia = document.createElement('intro-with-multimedia');
+    const contentInfoWithMultimedia = document.createElement('cc-intro-with-multimedia');
     Object.assign(contentInfoWithMultimedia, this.bannerContent);
     return html`${contentInfoWithMultimedia}`;
   }
 
   private renderCountdownImage(): TemplateResult {
-    const countdownImage = document.createElement('idblabext-content-countdown-image');
+    const countdownImage = document.createElement('cc-content-countdown-image');
     Object.assign(countdownImage, this.bannerContent.countdownImage);
     return html`${countdownImage}`;
   }
@@ -106,12 +105,12 @@ export class CcBanner extends LitElement implements BannerProperties {
 
   render(): TemplateResult {
     return html`
-      <layout-section
+      <cc-layout-section
         .layoutProperties="${this.layout.layoutProperties}"
         .layoutContentProperties="${this.layout.layoutContentProperties}"
       >
         ${this.renderContentBanner()}
-      </layout-section>
+      </cc-layout-section>
     `;
   }
 }
