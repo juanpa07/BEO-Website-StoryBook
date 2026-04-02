@@ -1,3 +1,26 @@
-.youtube__iframe {
-  @apply w-full h-full border-0;
+.youtube {
+  @apply relative w-full cursor-pointer;
+}
+
+.youtube-target {
+  /* 16:9 automáticamente */
+  @apply aspect-video;
+}
+
+.youtube iframe {
+  @apply absolute inset-0 w-full h-full;
+}
+
+
+.youtube-background {
+  @apply h-full overflow-hidden;
+}
+
+
+/* .youtube-background iframe {
+  @apply scale-[10] md:scale-[4] lg:scale-[2];
+} */
+
+.youtube-background iframe {
+  @apply w-[450%] h-[450%] md:w-[300%] md:h-[300%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
 }

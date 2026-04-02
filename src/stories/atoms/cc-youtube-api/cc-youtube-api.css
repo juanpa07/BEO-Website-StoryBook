@@ -2,6 +2,7 @@
   @apply relative w-full cursor-pointer;
 }
 
+/* Opción con aspect-video (requiere el plugin aspect-ratio de Tailwind) */
 .youtube-target {
   @apply aspect-video;
 }

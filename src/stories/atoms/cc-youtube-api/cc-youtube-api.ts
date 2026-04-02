@@ -1,10 +1,8 @@
+import { defineCustomElement } from '@helper/defineCustomElement';
+import type { YoutubeProperties } from '@interfaces/youtube.interface';
 import { LitElement, html, css } from 'lit';
 import type { CSSResultGroup, TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
-
-import { defineCustomElement } from '@helper/defineCustomElement';
-import type { YoutubeProperties } from '@interfaces/youtube.interface';
-
 import componentStyles from './cc-youtube-api.lit';
 
 declare global {
@@ -33,7 +31,7 @@ export class CcYoutubeApi extends LitElement implements YoutubeProperties {
   @property({ type: String }) videoId: string = 'ATGv84uorF4';
   @property({ type: Boolean }) autoplay = false;
   @property({ type: Number }) size = 100;
-  @property({ type: String }) measurement: 'px' | '%' = '%';
+  @property({ type: String }) measurement = '%';
   @property({ type: Boolean }) mute = false;
   @property({ type: Boolean }) loop = false;
   @property({ type: Boolean }) controls = true;
@@ -52,7 +50,7 @@ export class CcYoutubeApi extends LitElement implements YoutubeProperties {
       try {
         this.player.destroy();
       } catch (error) {
-        console.warn('Error destroying player:', error);
+        console.warn('Error al destruir el reproductor:', error);
       }
       this.player = undefined;
     }
@@ -71,7 +69,7 @@ export class CcYoutubeApi extends LitElement implements YoutubeProperties {
       CcYoutubeApi.pendingCallbacks.push(() => this.initPlayer());
       if (!window.onYouTubeIframeAPIReady) {
         window.onYouTubeIframeAPIReady = () => {
-          CcYoutubeApi.pendingCallbacks.forEach((cb) => cb());
+          CcYoutubeApi.pendingCallbacks.forEach(callback => callback());
           CcYoutubeApi.pendingCallbacks = [];
         };
       }
@@ -81,7 +79,7 @@ export class CcYoutubeApi extends LitElement implements YoutubeProperties {
   private initPlayer(): void {
     const playerElement = this.shadowRoot?.getElementById(this.playerId);
     if (!playerElement) {
-      console.error('Player element not found in Shadow DOM');
+      console.error('No se encontró el elemento del reproductor en el Shadow DOM');
       return;
     }
     this.player = new window.YT.Player(playerElement, {
@@ -115,8 +113,8 @@ export class CcYoutubeApi extends LitElement implements YoutubeProperties {
     const viewTypeClass = this.isBackground ? 'youtube-background' : 'youtube-target';
     const height = `${this.size}${this.measurement}`;
     return html`
-      <div class=${['youtube', viewTypeClass].join(' ')} style="height: ${height};">
-        <div id=${this.playerId} class="player"></div>
+      <div class="${['youtube', viewTypeClass].join(' ')}" style="height: ${height};">
+        <div id="${this.playerId}" class="player"></div>
       </div>
     `;
   }
