@@ -1,0 +1,53 @@
+.countdown {
+  @apply w-full;
+}
+
+/* Colors */
+.countdown--color-primary {
+  @apply text-primary-500;
+}
+
+.countdown--color-secondary {
+  @apply text-secondary-500;
+}
+
+.countdown--color-white {
+  @apply text-white;
+}
+
+.countdown--color-black {
+  @apply text-neutral-700;
+}
+
+.countdown--color-neutral {
+  @apply text-neutral-500;
+}
+
+.countdown__counters {
+  @apply flex justify-center md:justify-start gap-y-2 text-center;
+}
+
+.countdown__counter {
+  @apply pr-5 lg:pr-7;
+}
+
+.countdown__value {
+  @apply block font-bold text-5xl md:text-4xl lg:text-7xl font-roboto whitespace-nowrap;
+}
+
+.countdown__label {
+  @apply text-base font-roboto md:text-lg whitespace-nowrap;
+}
+
+.countdown__meta {
+  @apply pb-4 md:pb-0 w-full;
+}
+
+.countdown__location,
+.countdown__datetime {
+  @apply flex flex-wrap justify-center md:justify-start gap-4 text-lg md:text-2xl mt-4;
+}
+
+.countdown__item {
+  @apply flex gap-1 items-center;
+}

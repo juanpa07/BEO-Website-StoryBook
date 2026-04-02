@@ -27,6 +27,28 @@ cc-{nombre}/
 └── cc-{nombre}.stories.ts ← stories + tests
 ```
 
+### Prefijo canónico: `cc-`
+
+**Todos** los componentes usan el prefijo `cc-` — en el nombre de carpeta, archivos, tag HTML,
+nombre de clase y `defineCustomElement`. Si el componente a migrar usa otro prefijo (`ebf-`,
+`cp-`, `beo-`, etc.), **renombrarlo completo** como parte de la migración:
+
+| Qué cambiar | Ejemplo antes | Ejemplo después |
+|---|---|---|
+| Carpeta | `ebf-countdown/` | `cc-countdown/` |
+| Archivos | `ebf-countdown.ts` | `cc-countdown.ts` |
+| Clase TS | `class EbfCountdown` | `class CcCountdown` |
+| Tag HTML | `ebf-countdown` | `cc-countdown` |
+| `defineCustomElement` | `'ebf-countdown'` | `'cc-countdown'` |
+| `HTMLElementTagNameMap` | `'ebf-countdown'` | `'cc-countdown'` |
+| Import del `.lit` | `./ebf-countdown.lit` | `./cc-countdown.lit` |
+| Import en stories | `import './ebf-countdown'` | `import './cc-countdown'` |
+| `component:` en meta | `'ebf-countdown'` | `'cc-countdown'` |
+| Tags HTML en renders | `<ebf-countdown ...>` | `<cc-countdown ...>` |
+| Imports de sub-componentes | `../../atoms/ebf-icon/ebf-icon` | `../../atoms/cc-icon/cc-icon` |
+
+Eliminar la carpeta con el prefijo viejo una vez creada la nueva.
+
 ---
 
 ## Estructura canónica de un `.ts` (componente)
@@ -224,13 +246,16 @@ Antes de crear un `.stories.ts`, tener claro:
 
 ## Checklist: migrar un story viejo
 
-1. Verificar que el import del componente sea `./cc-{nombre}` (relativo)
-2. Verificar que args use `Partial<{Nombre}Properties>`, no tipos inline
-3. Agregar `parameters.docs.source.type: 'dynamic'` si no está
-4. Reemplazar bindings de string/number con `.prop` → usar `attr=${ifDefined()}`
-5. Verificar que el `title` siga el patrón `{Nivel}/{NombreVisual}`
-6. Asegurarse que `tags: ['autodocs']` esté presente
-7. Renombrar stories según la convención de la tabla de naming
+1. **Renombrar a prefijo `cc-`**: carpeta, archivos, clase, tag, `defineCustomElement`, `HTMLElementTagNameMap`, imports de sub-componentes — ver tabla de prefijos arriba
+2. Verificar que el import del componente sea `./cc-{nombre}` (relativo)
+3. Verificar que args use `Partial<{Nombre}Properties>`, no tipos inline
+4. Agregar `parameters.docs.source.type: 'dynamic'` si no está
+5. Reemplazar bindings de string/number con `.prop` → usar `attr=${ifDefined()}`
+6. Mover render repetido en cada story al `render` global del `meta`
+7. Verificar que el `title` siga el patrón `{Nivel}/{NombreVisual}` (mayúscula)
+8. Asegurarse que `tags: ['autodocs']` esté presente
+9. Renombrar stories según la convención de la tabla de naming
+10. Eliminar la carpeta vieja con el prefijo anterior
 
 ---
 
