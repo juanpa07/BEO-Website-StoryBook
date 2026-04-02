@@ -1,0 +1,169 @@
+/* ============================== */
+/* Base Textarea */
+/* ============================== */
+
+.textarea {
+  @apply block w-full border-2 border-solid transition-colors duration-200 resize-none;
+  @apply focus:outline-0;
+}
+
+/* Auto-resize support */
+.textarea--auto-resize {
+  field-sizing: content;
+}
+
+/* ============================== */
+/* Colors */
+/* ============================== */
+
+.textarea--color-primary {
+  @apply border-primary bg-white text-gray-800;
+}
+
+.textarea--color-primary::placeholder {
+  @apply text-gray-400;
+}
+
+.textarea--color-primary:hover {
+  @apply border-primary-700;
+}
+
+.textarea--color-primary:focus {
+  box-shadow: 0 0 0 3px rgba(0, 78, 112, 0.2);
+}
+
+.textarea--color-secondary {
+  @apply border-secondary bg-white text-gray-800;
+}
+
+.textarea--color-secondary::placeholder {
+  @apply text-gray-400;
+}
+
+.textarea--color-secondary:hover {
+  @apply border-secondary-700;
+}
+
+.textarea--color-secondary:focus {
+  box-shadow: 0 0 0 3px rgba(219, 69, 105, 0.2);
+}
+
+.textarea--color-neutral {
+  @apply border-neutral-300 bg-gray-50 text-gray-800;
+}
+
+.textarea--color-neutral::placeholder {
+  @apply text-gray-400;
+}
+
+.textarea--color-neutral:hover {
+  @apply border-neutral-500;
+}
+
+.textarea--color-neutral:focus {
+  @apply border-blue-500;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.textarea--color-gray-border {
+  @apply border-gray-300 bg-gray-100 text-gray-800;
+  border-width: 1px;
+}
+
+.textarea--color-gray-border::placeholder {
+  @apply text-gray-400;
+}
+
+.textarea--color-gray-border:hover {
+  @apply border-gray-400;
+}
+
+.textarea--color-gray-border:focus {
+  @apply border-gray-500;
+  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.2);
+}
+
+/* ============================== */
+/* Sizes */
+/* ============================== */
+
+.textarea--size-small {
+  @apply text-sm px-2 py-1;
+}
+
+.textarea--size-medium {
+  @apply text-base px-3 py-2;
+}
+
+.textarea--size-large {
+  @apply text-lg px-4 py-3;
+}
+
+/* ============================== */
+/* Border Radius */
+/* ============================== */
+
+.textarea--radius-rounded {
+  @apply rounded-sm;
+}
+
+.textarea--radius-rounded-md {
+  @apply rounded-md;
+}
+
+.textarea--radius-rounded-lg {
+  @apply rounded-lg;
+}
+
+.textarea--radius-rounded-xl {
+  @apply rounded-xl;
+}
+
+.textarea--radius-rounded-none {
+  @apply rounded-none;
+}
+
+/* ============================== */
+/* States */
+/* ============================== */
+
+.textarea--disabled {
+  @apply opacity-60 cursor-not-allowed bg-gray-100;
+}
+
+.textarea--readonly {
+  @apply bg-gray-50 cursor-default;
+}
+
+.textarea--error {
+  @apply border-red-500 bg-red-50 text-red-900;
+}
+
+.textarea--error::placeholder {
+  @apply text-red-400;
+}
+
+.textarea--error:focus {
+  @apply border-red-500;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+/* ============================== */
+/* Error Message */
+/* ============================== */
+
+.error-message {
+  @apply text-red-500 text-sm mt-1 block;
+}
+
+/* ============================== */
+/* Character Counter */
+/* ============================== */
+
+.character-counter {
+  @apply text-gray-500 text-sm mt-1 text-right block;
+}
+
+.character-counter--limit {
+  @apply text-red-500;
+}

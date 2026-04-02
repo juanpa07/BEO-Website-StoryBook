@@ -1,0 +1,19 @@
+.youtube {
+  @apply relative w-full cursor-pointer;
+}
+
+.youtube-target {
+  @apply aspect-video;
+}
+
+.youtube-background {
+  @apply h-full overflow-hidden;
+}
+
+.youtube iframe {
+  @apply absolute inset-0 w-full h-full;
+}
+
+.youtube-background iframe {
+  @apply scale-[10] md:scale-[4] lg:scale-[2] xl:scale-[1.2];
+}

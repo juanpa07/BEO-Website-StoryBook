@@ -1,0 +1,200 @@
+/* =============== */
+/* === Colors ==== */
+/* =============== */
+.text--color-primary {
+  @apply text-(--color-primary-500);
+}
+
+.text--color-secondary {
+  @apply text-(--color-secondary-500);
+}
+
+.text--color-neutral {
+  @apply text-neutral-500;
+}
+
+.text--color-neutral-dark {
+  @apply text-neutral-700;
+}
+
+.text--color-gray {
+  @apply text-gray-500;
+}
+
+.text--color-black {
+  @apply text-black;
+}
+
+.text--color-white {
+  @apply text-white;
+}
+
+/* =============== */
+/* == Text size == */
+/* =============== */
+.text--size-h1 {
+  @apply text-5xl mb-6 font-semibold;
+}
+
+.text--size-h2 {
+  @apply text-4xl mb-5 font-semibold;
+}
+
+.text--size-h3 {
+  @apply text-3xl mb-4 font-semibold;
+}
+
+.text--size-h4 {
+  @apply text-2xl mb-2 font-semibold;
+}
+
+.text--size-h5 {
+  @apply text-xl mb-1 font-semibold;
+}
+
+.text--size-h6 {
+  @apply text-lg mb-1 font-semibold;
+}
+
+.text--size-xs {
+  @apply text-xs;
+}
+
+.text--size-sm {
+  @apply text-sm;
+}
+
+.text--size-base {
+  @apply text-base;
+}
+
+.text--size-md {
+  @apply text-base;
+}
+
+.text--size-lg {
+  @apply text-lg;
+}
+
+.text--size-xl {
+  @apply text-xl;
+}
+
+.text--size-2xl {
+  @apply text-2xl;
+}
+
+.text--size-3xl {
+  @apply text-3xl;
+}
+
+.text--size-4xl {
+  @apply text-3xl md:text-4xl lg:text-5xl mb-3;
+}
+
+.text--size-5xl {
+  @apply text-3xl md:text-4xl lg:text-5xl mb-3;
+}
+
+.text--size-6xl {
+  @apply text-4xl md:text-5xl lg:text-6xl mb-3;
+}
+
+.text--size-7xl {
+  @apply text-5xl md:text-6xl lg:text-7xl mb-3;
+}
+
+.text--size-8xl {
+  @apply text-6xl md:text-7xl lg:text-8xl mb-3;
+}
+
+.text--size-9xl {
+  @apply text-7xl md:text-8xl lg:text-9xl mb-3;
+}
+
+/* =============== */
+/* == Text weight == */
+/* =============== */
+.text--weight-thin {
+  @apply font-thin;
+}
+
+.text--weight-extralight {
+  @apply font-extralight;
+}
+
+.text--weight-light {
+  @apply font-light;
+}
+
+.text--weight-normal {
+  @apply font-normal;
+}
+
+.text--weight-medium {
+  @apply font-medium;
+}
+
+.text--weight-semibold {
+  @apply font-semibold;
+}
+
+.text--weight-bold {
+  @apply font-bold;
+}
+
+.text--weight-extrabold {
+  @apply font-extrabold;
+}
+
+.text--weight-black {
+  @apply font-black;
+}
+
+/* =============== */
+/* == Text align == */
+/* =============== */
+.text--align-left {
+  @apply text-left;
+}
+
+.text--align-center {
+  @apply text-center items-center;
+}
+
+.text--align-right {
+  @apply text-right;
+}
+
+/* ================= */
+/* == Font Family == */
+/* ================= */
+.text--font-open-sans {
+  @apply font-open-sans;
+}
+
+.text--font-roboto {
+  @apply font-roboto;
+}
+
+.text--font-montserrat {
+  @apply font-montserrat;
+}
+
+.text--font-dancing {
+  @apply font-dancing;
+}
+
+/* ================== */
+/* == Description == */
+/* ================== */
+.text {
+  @apply my-3;
+}
+
+/* ================== */
+/* == Font style == */
+/* ================== */
+.text--font-style-italic {
+  @apply italic;
+}

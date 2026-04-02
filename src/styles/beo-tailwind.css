@@ -264,6 +264,9 @@
   .inline {
     display: inline;
   }
+  .table {
+    display: table;
+  }
   .w-full {
     width: 100%;
   }

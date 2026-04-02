@@ -1,0 +1,156 @@
+@layer components {
+  /* ============================
+   * Table Container
+   * ============================ */
+  .table-container {
+    @apply w-full;
+  }
+
+  .table-wrapper {
+    @apply w-full overflow-x-auto;
+  }
+
+  /* ============================
+   * Table Base
+   * ============================ */
+  .table {
+    @apply w-full border-collapse;
+  }
+
+  /* ============================
+   * Table Head
+   * ============================ */
+  .table thead {
+    @apply bg-gray-50 border-b border-gray-200;
+  }
+
+  .table thead th {
+    @apply px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider;
+  }
+
+  .table thead th.align-center {
+    @apply text-center;
+  }
+
+  .table thead th.align-right {
+    @apply text-right;
+  }
+
+  /* ============================
+   * Table Body
+   * ============================ */
+  .table tbody {
+    @apply bg-white divide-y divide-gray-200;
+  }
+
+  .table tbody tr {
+    @apply transition-colors duration-150;
+  }
+
+  .table tbody td {
+    @apply px-6 py-4 text-sm text-gray-900;
+  }
+
+  .table tbody td.align-center {
+    @apply text-center;
+  }
+
+  .table tbody td.align-right {
+    @apply text-right;
+  }
+
+  /* ============================
+   * Table Variants
+   * ============================ */
+
+  /* Hoverable rows */
+  .table tbody tr.row-hover:hover {
+    @apply bg-gray-50 cursor-pointer;
+  }
+
+  /* Striped rows */
+  .table.table--striped tbody tr:nth-child(even) {
+    @apply bg-gray-50;
+  }
+
+  .table.table--striped tbody tr.row-hover:hover {
+    @apply bg-gray-100;
+  }
+
+  /* Bordered */
+  .table.table--bordered {
+    @apply border border-gray-200;
+  }
+
+  .table.table--bordered thead th,
+  .table.table--bordered tbody td {
+    @apply border-r border-gray-200;
+  }
+
+  .table.table--bordered thead th:last-child,
+  .table.table--bordered tbody td:last-child {
+    @apply border-r-0;
+  }
+
+  /* Compact */
+  .table.table--compact thead th {
+    @apply px-4 py-2;
+  }
+
+  .table.table--compact tbody td {
+    @apply px-4 py-2;
+  }
+
+  /* ============================
+   * Badge Styles
+   * ============================ */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-success {
+    @apply bg-green-500 text-green-800;
+  }
+
+  .badge-error {
+    @apply bg-red-500 text-red-800;
+  }
+
+  .badge-info {
+    @apply bg-blue-500 text-blue-800;
+  }
+
+  .badge-warning {
+    @apply bg-yellow-500 text-yellow-800;
+  }
+
+  .badge-primary {
+    @apply bg-purple-500 text-purple-800;
+  }
+
+  /* ============================
+   * Action Buttons
+   * ============================ */
+  .table-actions {
+    @apply flex items-center gap-1 justify-center;
+  }
+
+  /* ============================
+   * Empty State
+   * ============================ */
+  .table-empty {
+    @apply text-center py-12 text-gray-500;
+  }
+
+  .table-empty-icon {
+    @apply mx-auto h-12 w-12 text-gray-400 mb-4;
+  }
+
+  .table-empty-message {
+    @apply text-sm font-medium text-gray-900 mb-1;
+  }
+
+  .table-empty-description {
+    @apply text-sm text-gray-500;
+  }
+}
