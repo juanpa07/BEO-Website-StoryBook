@@ -1,0 +1,30 @@
+.content-countdown {
+    @apply flex flex-col gap-10 p-0 md:p-4;
+}
+
+.content-countdown__image {
+    @apply w-full md:max-w-130 max-h-150 flex justify-center md:justify-start;
+}
+
+.content-countdown__links {
+    @appy flex flex-wrap gap-3;
+}
+
+
+/* Align items */
+.content-countdown--align-start {
+    @apply items-center md:items-start;
+}
+
+.content-countdown--align-center {
+    @apply items-center md:items-center;
+}
+
+.content-countdown--align-end {
+    @apply items-center md:items-end;
+}
+
+.content-countdown--align-stretch {
+    @apply items-center md:items-stretch;
+}
+

@@ -1,0 +1,564 @@
+.layout-section {
+  @apply relative w-full h-full flex flex-col items-center justify-center;
+}
+
+.layout-section__background-image {
+  @apply bg-cover bg-center bg-no-repeat;
+}
+
+.layout-section__background-video,
+.layout-section__background-image {
+  @apply absolute inset-0 w-full h-full z-1;
+}
+
+
+/* =============== */
+/* === Colors ==== */
+/* =============== */
+
+/* === Primary === */
+.layout-section--bgcolor-primary {
+  @apply bg-(--color-primary-500) dark:bg-neutral-900;
+}
+
+/* === secondary === */
+.layout-section--bgcolor-secondary {
+  @apply bg-(--color-secondary-500) dark:bg-neutral-900;
+}
+
+/* === white === */
+.layout-section--bgcolor-white {
+  @apply bg-white dark:bg-neutral-900;
+}
+
+/* === black === */
+.layout-section--bgcolor-black {
+  @apply bg-black dark:bg-neutral-900;
+}
+
+/* === neutral === */
+.layout-section--bgcolor-neutral {
+  @apply bg-neutral-500 dark:bg-neutral-900;
+}
+
+/* === neutral light === */
+.layout-section--bgcolor-neutral-light {
+  @apply bg-neutral-200 dark:bg-neutral-900;
+}
+
+/* === neutral dark === */
+.layout-section--bgcolor-neutral-dark {
+  @apply bg-neutral-700 dark:bg-neutral-900;
+}
+
+/* ====================== */
+/* === Layout height ==== */
+/* ====================== */
+.layout-section--height-screen {
+  @apply max-sm:min-h-screen md:h-screen;
+}
+.layout-section--height-90vh {
+  @apply max-sm:min-h-screen md:h-[90vh];
+}
+.layout-section--height-80vh {
+  @apply max-sm:min-h-screen md:h-[80vh];
+}
+.layout-section--height-70vh {
+  @apply max-sm:min-h-screen md:h-[70dvh];
+}
+.layout-section--height-60vh {
+  @apply max-sm:min-h-screen md:h-[60vh];
+}
+.layout-section--height-50vh {
+  @apply max-sm:min-h-screen md:h-[50vh];
+}
+.layout-section--height-40vh {
+  @apply max-sm:min-h-screen md:h-[40vh];
+}
+.layout-section--height-30vh {
+  @apply max-sm:min-h-screen md:h-[30vh];
+}
+.layout-section--height-20vh {
+  @apply max-sm:min-h-screen md:h-[20vh];
+}
+.layout-section--height-fit {
+  @apply h-fit;
+}
+
+.layout-section--height-330 {
+  @apply max-sm:min-h-screen md:h-[330px];
+}
+.layout-section--height-410 {
+  @apply max-sm:min-h-screen md:h-[410px];
+}
+.layout-section--height-555 {
+  @apply max-sm:min-h-screen md:h-[555px];
+}
+.layout-section--height-600 {
+  @apply max-sm:min-h-screen md:h-[600px];
+}
+
+/* ====================== */
+/* === Layout Content ==== */
+/* ====================== */
+
+/* === content === */
+.layout-section__content {
+  @apply relative w-full z-8 max-h-full px-4 lg:px-0 mx-auto;
+} 
+
+.layout-section__content-slot {
+  @apply relative z-8 w-full h-full inline-block;
+}
+
+/* .layout-section__content-slot {
+  @apply relative z-8 w-full h-full inline-block overflow-hidden;
+} */
+
+.layout-section__content-slot--border-radius-2xl {
+  @apply rounded-2xl;
+}
+
+
+.layout-section__content--max-width-,
+.layout-section__content--max-width-auto {
+  @apply sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1440px];
+}
+.layout-section__content--max-width-full,
+.layout-section__content--max-width-screen,
+.layout-section__content--max-width-none {
+  @apply w-full max-w-full;
+}
+
+
+/* ================================== */
+/* === Padding vertical dinámico ==== */
+/* ================================== */
+.layout-section__content--py-0 {
+  @apply py-0;
+}
+.layout-section__content--py-1 {
+  @apply py-1;
+}
+.layout-section__content--py-2 {
+  @apply py-2;
+}
+.layout-section__content--py-3 {
+  @apply py-3;
+}
+.layout-section__content--py-4 {
+  @apply py-4;
+}
+.layout-section__content--py-5 {
+  @apply py-5;
+}
+.layout-section__content--py-6 {
+  @apply py-6;
+}
+.layout-section__content--py-7 {
+  @apply py-7;
+}
+.layout-section__content--py-8 {
+  @apply py-8;
+}
+.layout-section__content--py-9 {
+  @apply py-9;
+}
+.layout-section__content--py-10 {
+  @apply py-10;
+}
+.layout-section__content--py-11 {
+  @apply py-11;
+}
+.layout-section__content--py-12 {
+  @apply py-12;
+}
+.layout-section__content--py-13 {
+  @apply py-13;
+}
+.layout-section__content--py-14 {
+  @apply py-14;
+}
+.layout-section__content--py-16 {
+  @apply py-16;
+}
+.layout-section__content--py-20 {
+  @apply py-20;
+}
+.layout-section__content--py-24 {
+  @apply py-24;
+}
+.layout-section__content--py-28 {
+  @apply py-28;
+}
+.layout-section__content--py-32 {
+  @apply py-32;
+}
+.layout-section__content--py-36 {
+  @apply py-36;
+}
+.layout-section__content--py-40 {
+  @apply py-40;
+}
+.layout-section__content--py-44 {
+  @apply py-44;
+}
+
+/* ========================================= */
+/* === Padding horizontal dinámico  ====== */
+/* ========================================= */
+.layout-section__content--px-1 {
+  @apply md:px-1;
+}
+.layout-section__content--px-2 {
+  @apply md:px-2;
+}
+.layout-section__content--px-3 {
+  @apply md:px-3;
+}
+.layout-section__content--px-4 {
+  @apply md:px-4;
+}
+.layout-section__content--px-5 {
+  @apply md:px-5;
+}
+.layout-section__content--px-6 {
+  @apply md:px-6;
+}
+.layout-section__content--px-7 {
+  @apply md:px-7;
+}
+.layout-section__content--px-8 {
+  @apply md:px-8;
+}
+.layout-section__content--px-9 {
+  @apply md:px-9;
+}
+.layout-section__content--px-10 {
+  @apply md:px-10;
+}
+.layout-section__content--px-11 {
+  @apply md:px-11;
+}
+.layout-section__content--px-12 {
+  @apply md:px-12;
+}
+.layout-section__content--px-13 {
+  @apply md:px-13;
+}
+.layout-section__content--px-14 {
+  @apply md:px-14;
+}
+.layout-section__content--px-16 {
+  @apply md:px-16;
+}
+.layout-section__content--px-20 {
+  @apply md:px-20;
+}
+.layout-section__content--px-24 {
+  @apply md:px-24;
+}
+.layout-section__content--px-28 {
+  @apply md:px-28;
+}
+.layout-section__content--px-32 {
+  @apply md:px-32;
+}
+.layout-section__content--px-36 {
+  @apply md:px-36;
+}
+.layout-section__content--px-40 {
+  @apply md:px-40;
+}
+.layout-section__content--px-44 {
+  @apply md:px-44;
+}
+
+/* ================================== */
+/* === Marging vertical dinámico ==== */
+/* ================================== */
+.layout-section__content--my-0 {
+  @apply my-0;
+}
+.layout-section__content--my-1 {
+  @apply my-1;
+}
+.layout-section__content--my-2 {
+  @apply my-2;
+}
+.layout-section__content--my-3 {
+  @apply my-3;
+}
+.layout-section__content--my-4 {
+  @apply my-4;
+}
+.layout-section__content--my-5 {
+  @apply my-5;
+}
+.layout-section__content--my-6 {
+  @apply my-6;
+}
+.layout-section__content--my-7 {
+  @apply my-7;
+}
+.layout-section__content--my-8 {
+  @apply my-8;
+}
+.layout-section__content--my-9 {
+  @apply my-9;
+}
+.layout-section__content--my-10 {
+  @apply my-10;
+}
+.layout-section__content--my-11 {
+  @apply my-10 md:my-11;
+}
+.layout-section__content--my-12 {
+  @apply my-10 md:my-12;
+}
+.layout-section__content--my-13 {
+  @apply my-10 md:my-13;
+}
+.layout-section__content--my-14 {
+  @apply my-10 md:my-14;
+}
+.layout-section__content--my-16 {
+  @apply my-10 md:my-16;
+}
+.layout-section__content--my-20 {
+  @apply my-10 md:my-20;
+}
+.layout-section__content--my-24 {
+  @apply my-10 md:my-24;
+}
+.layout-section__content--my-28 {
+  @apply my-10 md:my-28;
+}
+.layout-section__content--my-32 {
+  @apply my-10 md:my-32;
+}
+.layout-section__content--my-36 {
+  @apply my-10 md:my-36;
+}
+.layout-section__content--my-40 {
+  @apply my-10 md:my-40;
+}
+.layout-section__content--my-44 {
+  @apply my-10 md:my-44;
+}
+
+.layout-section__content--full-height-true {
+  @apply h-full flex-1 flex items-center justify-center;
+}
+.layout-section__content--full-height-false {
+  @apply h-auto;
+}
+
+/* ====================== */
+/* === Border content radius === */
+/* ====================== */
+.layout-section__content--border-radius-none {
+  @apply rounded-none;
+}
+.layout-section__content--border-radius-sm {
+  @apply rounded-sm;
+}
+.layout-section__content--border-radius-md {
+  @apply rounded-md;
+}
+.layout-section__content--border-radius-lg {
+  @apply rounded-lg;
+}
+.layout-section__content--border-radius-xl {
+  @apply rounded-xl;
+}
+.layout-section__content--border-radius-2xl {
+  @apply rounded-2xl;
+}
+.layout-section__content--border-radius-3xl {
+  @apply rounded-3xl;
+}
+.layout-section__content--border-radius-4xl {
+  @apply rounded-4xl;
+}
+.layout-section__content--border-radius-full {
+  @apply rounded-full;
+}
+
+
+/* ====================== */
+/* === Content overlay === */
+/* ====================== */
+
+.layout-section__overlay {
+  @apply absolute top-0 left-0 z-2 w-full h-full inset-0;
+}
+
+.layout-section__overlay-solid {
+  background: rgb(var(--color));
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ====================== */
+/* === Content overlay solid Effect === */
+/* ====================== */
+.layout-section__content--overlay {
+  @apply absolute w-full h-full inline-block inset-0 -z-1;
+}
+
+.layout-section__content--overlay-solid {
+  background: rgb(var(--color));
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.layout-section__content--overlay-solid-glass {
+  background: rgba(var(--color), 0.17);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ====================== */
+/* === Content overlay gradient Effect === */
+/* ====================== */
+.layout-section__overlay-linear-gradient{
+  background: linear-gradient(var(--gradient-angle), rgb(var(--color-one)) 0%, rgb(var(--color-two)) 50%, rgb(var(--color-three)) 100%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.layout-section__content--overlay-linear-gradient {
+  background: linear-gradient(var(--gradient-angle), rgb(var(--color-one)) 0%, rgb(var(--color-two)) 50%, rgb(var(--color-three)) 100%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.layout-section__overlay-radial-gradient,
+.layout-section__content--overlay-radial-gradient {
+  background: radial-gradient(circle, rgb(var(--color-one)) 0%, rgb(var(--color-two)) 50%, rgb(var(--color-three)) 100%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.layout-section__overlay-linear-gradient-glass {
+  background: linear-gradient(var(--gradient-angle), rgba(var(--color-one), 0.2) 0%, rgba(var(--color-two), 0.2) 50%, rgba(var(--color-three), 0.2) 100%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.layout-section__content--overlay-linear-gradient-glass {
+  background: linear-gradient(var(--gradient-angle), rgba(var(--color-one), 0.2) 0%, rgba(var(--color-two), 0.2) 50%, rgba(var(--color-three), 0.2) 100%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.layout-section__content--overlay-radial-gradient-glass {
+  background: radial-gradient(circle, rgba(var(--color-one), 0.2) 0%, rgba(var(--color-two), 0.2) 50%, rgba(var(--color-three), 0.2) 100%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* ====================== */
+/* === Layout overlay === */
+/* ====================== */
+.layout-section__overlay--opacity-10,
+.layout-section__overlay-solid-opacity-10,
+.layout-section__overlay-gradient-opacity-10,
+.layout-section__content--overlay-solid-opacity-10,
+.layout-section__content--overlay-gradient-opacity-10 {
+  @apply opacity-10;
+}
+.layout-section__overlay--opacity-20,
+.layout-section__overlay-solid-opacity-20,
+.layout-section__overlay-gradient-opacity-20,
+.layout-section__content--overlay-solid-opacity-20,
+.layout-section__content--overlay-gradient-opacity-20 {
+  @apply opacity-20;
+}
+.layout-section__overlay--opacity-30,
+.layout-section__overlay-solid-opacity-30,
+.layout-section__overlay-gradient-opacity-30,
+.layout-section__content--overlay-solid-opacity-30,
+.layout-section__content--overlay-gradient-opacity-30 {
+  @apply opacity-30;
+}
+.layout-section__overlay--opacity-40,
+.layout-section__overlay-solid-opacity-40,
+.layout-section__overlay-gradient-opacity-40,
+.layout-section__content--overlay-solid-opacity-40,
+.layout-section__content--overlay-gradient-opacity-40 {
+  @apply opacity-40;
+}
+.layout-section__overlay--opacity-50,
+.layout-section__overlay-solid-opacity-50,
+.layout-section__overlay-gradient-opacity-50,
+.layout-section__content--overlay-solid-opacity-50,
+.layout-section__content--overlay-gradient-opacity-50 {
+  @apply opacity-50;
+}
+.layout-section__overlay--opacity-60,
+.layout-section__overlay-solid-opacity-60,
+.layout-section__overlay-gradient-opacity-60,
+.layout-section__content--overlay-solid-opacity-60,
+.layout-section__content--overlay-gradient-opacity-60 {
+  @apply opacity-60;
+}
+.layout-section__overlay--opacity-70,
+.layout-section__overlay-solid-opacity-70,
+.layout-section__overlay-gradient-opacity-70,
+.layout-section__content--overlay-solid-opacity-70,
+.layout-section__content--overlay-gradient-opacity-70 {
+  @apply opacity-70;
+}
+.layout-section__overlay--opacity-80,
+.layout-section__overlay-solid-opacity-80,
+.layout-section__overlay-gradient-opacity-80,
+.layout-section__content--overlay-solid-opacity-80,
+.layout-section__content--overlay-gradient-opacity-80 {
+  @apply opacity-80;
+}
+.layout-section__overlay--opacity-90,
+.layout-section__overlay-solid-opacity-90,
+.layout-section__overlay-gradient-opacity-90,
+.layout-section__content--overlay-solid-opacity-90,
+.layout-section__content--overlay-gradient-opacity-90 {
+  @apply opacity-90;
+}
+.layout-section__overlay--opacity-100,
+.layout-section__overlay-solid-opacity-100,
+.layout-section__overlay-gradient-opacity-100,
+.layout-section__content--overlay-solid-opacity-100,
+.layout-section__content--overlay-gradient-opacity-100 {
+  @apply opacity-100;
+}
+
+
+/* ====================== */
+/* === Content border radius === */
+/* ====================== */
+.layout-section__content-slot--border-radius-none {
+  @apply rounded-none;
+}
+.layout-section__content-slot--border-radius-sm {
+  @apply rounded-sm overflow-hidden;
+}
+.layout-section__content-slot--border-radius-md {
+  @apply rounded-md overflow-hidden;
+}
+.layout-section__content-slot--border-radius-lg {
+  @apply rounded-lg overflow-hidden;
+}
+.layout-section__content-slot--border-radius-xl {
+  @apply rounded-xl overflow-hidden;
+}
+.layout-section__content-slot--border-radius-2xl {
+  @apply rounded-2xl overflow-hidden;
+}
+.layout-section__content-slot--border-radius-3xl {
+  @apply rounded-3xl overflow-hidden;
+}
+.layout-section__content-slot--border-radius-full {
+  @apply rounded-full overflow-hidden;
+}
