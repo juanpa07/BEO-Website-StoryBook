@@ -5,8 +5,31 @@ import type { ContentInfoProperties } from "@interfaces/contentInfo.interface";
 import { AlignItems } from "@enums/alignItems.enum";
 
 // Ajusta tus opciones/arrays a lo que uses. Pasar esto a un helper de constantes para facilitar la carga repetitivas de opciones
-const colors = ["primary", "secondary", "blue-darken-2", "blue-darken-1", "blue", "blue-lighten-1", "blue-lighten-2", "magenta-darken-2", "magenta-darken-1", "magenta", "magenta-lighten-1", "magenta-lighten-2", "green-darken-2", "green-darken-1", "green", "green-lighten-1", "green-lighten-2", "yellow-darken-2", "yellow-darken-1", "yellow", "yellow-lighten-1", "yellow-lighten-2", "purple", "gray-lighten-1", "gray", "gray-light", "gray-dark", "neutral", "neutral-dark", "white", "black", "caribequity", "caribequity-2", "caribe-yellow", "caribe-blue", "caribe-green", "caribe-red"];
-const positions = ["left", "center", "right"];
+const colors = [
+  "primary",
+  "primary-link",
+  "secondary",
+  "secondary-link",
+  "sucess",
+  "sucess-link",
+  "warning",
+  "warning-link",
+  "danger",
+  "danger-link",
+  "white",
+  "white-link",
+  "info",
+  "info-link",
+  "neutral",
+  "neutral-link",
+  "primary-white",
+  "secondary-white",
+  "sucess-white",
+  "warning-white",
+  "danger-white",
+  "info-white",
+  "neutral-white",
+];
 
 type ContentInfoArgs = Partial<ContentInfoProperties>;
 
@@ -134,48 +157,50 @@ export const ContentInfoIntroH1: Story = {
     descriptionColor: "neutral",
     descriptionFontSize: "lg",
     descriptionFontFamily: "open-sans",
-    links: [{
-      href: '#',
-      target: '_blank',
-      label: 'Primary Link',
-      size: 'base',
-      radius: 'rounded-full',
-      color: 'primary',
-      iconProps: {
-        library: 'material',
-        name: 'chevron_right',
-        size: 'medium',
-        position: 'right',
+    links: [
+      {
+        href: "#",
+        target: "_blank",
+        label: "Primary Link",
+        size: "base",
+        radius: "rounded-full",
+        color: "primary",
+        iconProps: {
+          library: "material",
+          name: "chevron_right",
+          size: "medium",
+          position: "right",
+        },
       },
-    },
-    {
-      href: '#',
-      target: '_blank',
-      label: 'Secondary Link',
-      size: 'base',
-      radius: 'rounded-full',
-      color: 'secondary',
-      iconProps: {
-        library: 'material',
-        name: 'chevron_right',
-        size: 'medium',
-        position: 'right',
+      {
+        href: "#",
+        target: "_blank",
+        label: "Secondary Link",
+        size: "base",
+        radius: "rounded-full",
+        color: "secondary",
+        iconProps: {
+          library: "material",
+          name: "chevron_right",
+          size: "medium",
+          position: "right",
+        },
       },
-    },
-    {
-      href: '#',
-      target: '_blank',
-      label: 'Neutral Link',
-      size: 'base',
-      radius: 'rounded-full',
-      color: 'neutral',
-      iconProps: {
-        library: 'material',
-        name: 'chevron_right',
-        size: 'medium',
-        position: 'left',
+      {
+        href: "#",
+        target: "_blank",
+        label: "Neutral Link",
+        size: "base",
+        radius: "rounded-full",
+        color: "neutral",
+        iconProps: {
+          library: "material",
+          name: "chevron_right",
+          size: "medium",
+          position: "left",
+        },
       },
-    }],
+    ],
     align: AlignItems.Start,
   },
   render: Template,
@@ -210,25 +235,26 @@ export const ContentInfoImageTitle: Story = {
     descriptionColor: "neutral",
     descriptionFontSize: "lg",
     descriptionFontFamily: "open-sans",
-    links: [{
-      href: 'https://example.com',
-      target: '_blank',
-      label: 'Event Recording',
-      size: 'base',
-      radius: 'rounded-full',
-      color: 'green',
-      iconProps: {
-        library: 'material',
-        name: 'chevron_right',
-        size: 'medium',
-        position: 'right',
+    links: [
+      {
+        href: "https://example.com",
+        target: "_blank",
+        label: "Event Recording",
+        size: "base",
+        radius: "rounded-full",
+        color: "green",
+        iconProps: {
+          library: "material",
+          name: "chevron_right",
+          size: "medium",
+          position: "right",
+        },
       },
-    }],
+    ],
     align: AlignItems.Start,
   },
   render: Template,
 };
-
 
 export const ContentInfoTitleSubtitleAndLinks: Story = {
   args: {
@@ -240,43 +266,45 @@ export const ContentInfoTitleSubtitleAndLinks: Story = {
     subtitleFontSize: "h5",
     subtitleColor: "primary",
     subtitleFontFamily: "monserrat",
-    links: [{
-      href: '#',
-      target: '_blank',
-      label: 'Primary Link',
-      size: 'base',
-      radius: 'rounded-full',
-      color: 'primary',
-      iconProps: {
-        library: 'material',
-        name: 'chevron_right',
-        size: 'medium',
-        position: 'right',
+    links: [
+      {
+        href: "#",
+        target: "_blank",
+        label: "Primary Link",
+        size: "base",
+        radius: "rounded-full",
+        color: "primary",
+        iconProps: {
+          library: "material",
+          name: "chevron_right",
+          size: "medium",
+          position: "right",
+        },
       },
-    },
-    {
-      href: '#',
-      target: '_blank',
-      label: 'Primary Link',
-      size: 'base',
-      radius: 'rounded-full',
-      color: 'primary',
-      iconProps: {
-        library: 'material',
-        name: 'chevron_right',
-        size: 'medium',
-        position: 'right',
+      {
+        href: "#",
+        target: "_blank",
+        label: "Primary Link",
+        size: "base",
+        radius: "rounded-full",
+        color: "primary",
+        iconProps: {
+          library: "material",
+          name: "chevron_right",
+          size: "medium",
+          position: "right",
+        },
       },
-    }],
+    ],
     align: AlignItems.Center,
   },
   render: Template,
 };
 
-
 export const ContentInfoTitleSubtitleAndLinksRight: Story = {
   args: {
-    title: "Acessibilidade, <span class='text-primary'>Eficácia</span>, Imparcialidade e Transparência",
+    title:
+      "Acessibilidade, <span class='text-primary'>Eficácia</span>, Imparcialidade e Transparência",
     titleFontSize: "6xl",
     titleColor: "secondary",
     titleFontFamily: "open-sans",
@@ -300,7 +328,8 @@ export const ContentInfoTitleSubtitleAndLeyend: Story = {
     subtitleFontSize: "h4",
     subtitleColor: "neutral",
     subtitleFontFamily: "open-sans",
-    description: "<div style='display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: center;'><span class='text-pillar-blue' style='display: flex; flex-wrap: wrap; gap: 5px; align-items: center;'><cc-icon name='radio_button_checked' size='medium' color='text-pillar-blue'></cc-icon>Economic Opportunities</span> <span class='text-pillar-orange' class='text-pillar-blue' style='display: flex; flex-wrap: wrap; gap: 5px; align-items: center;'><cc-icon name='radio_button_checked' size='medium' color='text-pillar-orange'></cc-icon>Investment Promotion & Venture Capital</span> <span class='text-pillar-pink' class='text-pillar-blue' style='display: flex; flex-wrap: wrap; gap: 5px; align-items: center;'><cc-icon name='radio_button_checked' size='medium' color='text-pillar-pink'></cc-icon>Enabling Policies for Growth</span></div>",
+    description:
+      "<div style='display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: center;'><span class='text-pillar-blue' style='display: flex; flex-wrap: wrap; gap: 5px; align-items: center;'><cc-icon name='radio_button_checked' size='medium' color='text-pillar-blue'></cc-icon>Economic Opportunities</span> <span class='text-pillar-orange' class='text-pillar-blue' style='display: flex; flex-wrap: wrap; gap: 5px; align-items: center;'><cc-icon name='radio_button_checked' size='medium' color='text-pillar-orange'></cc-icon>Investment Promotion & Venture Capital</span> <span class='text-pillar-pink' class='text-pillar-blue' style='display: flex; flex-wrap: wrap; gap: 5px; align-items: center;'><cc-icon name='radio_button_checked' size='medium' color='text-pillar-pink'></cc-icon>Enabling Policies for Growth</span></div>",
     descriptionColor: "neutral",
     descriptionFontSize: "lg",
     descriptionFontFamily: "open-sans",

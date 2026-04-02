@@ -19,14 +19,14 @@
   --font-accent: var(--font-dancing);
   --font-code: var(--font-fira-code);
 
-  /* Colors ebf */
+  /* Colors BEO */
   /* Marca */
   --brand-color-1: #004B87;
   --brand-color-2: #0EA5E9;
   --brand-color-3: #F59E0B;
 
 
-  /* Escala Primary (Basada en Verde #80bc00) */
+  /* Escala Primary (Basada en #004B87) */
   --color-primary-950: color-mix(in srgb, var(--brand-color-1) 10%, black 90%);
   --color-primary-900: color-mix(in srgb, var(--brand-color-1) 30%, black 80%);
   --color-primary-800: color-mix(in srgb, var(--brand-color-1) 40%, black 60%);
@@ -40,7 +40,7 @@
   --color-primary-100: color-mix(in srgb, var(--brand-color-1) 20%, white 80%);
   --color-primary-50: color-mix(in srgb, var(--brand-color-1) 10%, white 90%);
 
-  /* Escala Secondary (Basada en Azul #0f298f) */
+  /* Escala Secondary (Basada en #0EA5E9) */
   --color-secondary-950: color-mix(in srgb, var(--brand-color-2) 10%, black 90%);
   --color-secondary-900: color-mix(in srgb, var(--brand-color-2) 20%, black 80%);
   --color-secondary-800: color-mix(in srgb, var(--brand-color-2) 40%, black 60%);
@@ -54,7 +54,7 @@
   --color-secondary-100: color-mix(in srgb, var(--brand-color-2) 20%, white 80%);
   --color-secondary-50: color-mix(in srgb, var(--brand-color-2) 10%, white 90%);
 
-  /* Escala Accent (Basada en Amarillo #fde234) */
+  /* Escala Accent (Basada en #F59E0B) */
   --color-accent-950: color-mix(in srgb, var(--brand-color-3) 10%, black 90%);
   --color-accent-900: color-mix(in srgb, var(--brand-color-3) 20%, black 80%);
   --color-accent-800: color-mix(in srgb, var(--brand-color-3) 40%, black 60%);

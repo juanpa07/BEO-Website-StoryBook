@@ -19,7 +19,6 @@
   @apply justify-end;
 }
 
-
 /* =============== */
 /* === Colors ==== */
 /* =============== */
@@ -27,14 +26,14 @@
 .content-info__title--color-primary,
 .content-info__subtitle--color-primary,
 .content-info__description--color-primary {
-  @apply text-(--color-primary-500);
+  @apply text-primary-500;
 }
 
 /* Secondary color */
 .content-info__title--color-secondary,
 .content-info__subtitle--color-secondary,
 .content-info__description--color-secondary {
-  @apply text-(--color-secondary-500);
+  @apply text-secondary-500;
 }
 
 /* neutral color */
@@ -52,28 +51,16 @@
 }
 
 /* Gray color */
-.content-info__title--color-gray-lighten-1,
-.content-info__subtitle--color-gray-lighten-1,
-.content-info__description--color-gray-lighten-1 {
-  @apply text-gray-lighten-1;
-}
-
 .content-info__title--color-gray,
 .content-info__subtitle--color-gray,
 .content-info__description--color-gray {
   @apply text-gray-500;
 }
 
-.content-info__title--color-gray-light,
-.content-info__subtitle--color-gray-light,
-.content-info__description--color-gray-light {
-  @apply text-gray-light;
-}
-
 .content-info__title--color-gray-dark,
 .content-info__subtitle--color-gray-dark,
 .content-info__description--color-gray-dark {
-  @apply text-gray-dark;
+  @apply text-gray-700;
 }
 
 /* Back color */
@@ -88,187 +75,6 @@
 .content-info__subtitle--color-white,
 .content-info__description--color-white {
   @apply text-white;
-}
-
-/* Blue color */
-.content-info__title--color-blue-darken-2,
-.content-info__subtitle--color-blue-darken-2,
-.content-info__description--color-blue-darken-2 {
-  @apply text-blue-darken-2;
-}
-
-.content-info__title--color-blue-darken-1,
-.content-info__subtitle--color-blue-darken-1,
-.content-info__description--color-blue-darken-1 {
-  @apply text-blue-darken-1;
-}
-
-.content-info__title--color-blue,
-.content-info__subtitle--color-blue,
-.content-info__description--color-blue {
-  @apply text-blue;
-}
-
-.content-info__title--color-blue-lighten-1,
-.content-info__subtitle--color-blue-lighten-1,
-.content-info__description--color-blue-lighten-1 {
-  @apply text-blue-lighten-1;
-}
-
-.content-info__title--color-blue-lighten-2,
-.content-info__subtitle--color-blue-lighten-2,
-.content-info__description--color-blue-lighten-2 {
-  @apply text-blue-lighten-2;
-}
-
-/* Magenta color */
-.content-info__title--color-magenta-darken-2,
-.content-info__subtitle--color-magenta-darken-2,
-.content-info__description--color-magenta-darken-2 {
-  @apply text-magenta-darken-2;
-}
-
-.content-info__title--color-magenta-darken-1,
-.content-info__subtitle--color-magenta-darken-1,
-.content-info__description--color-magenta-darken-1 {
-  @apply text-magenta-darken-1;
-}
-
-.content-info__title--color-magenta,
-.content-info__subtitle--color-magenta,
-.content-info__description--color-magenta {
-  @apply text-magenta;
-}
-
-.content-info__title--color-magenta-lighten-1,
-.content-info__subtitle--color-magenta-lighten-1,
-.content-info__description--color-magenta-lighten-1 {
-  @apply text-magenta-lighten-1;
-}
-
-.content-info__title--color-magenta-lighten-2,
-.content-info__subtitle--color-magenta-lighten-2,
-.content-info__description--color-magenta-lighten-2 {
-  @apply text-magenta-lighten-2;
-}
-
-/* Green color */
-.content-info__title--color-green-darken-2,
-.content-info__subtitle--color-green-darken-2,
-.content-info__description--color-green-darken-2 {
-  @apply text-green-darken-2;
-}
-
-.content-info__title--color-green-darken-1,
-.content-info__subtitle--color-green-darken-1,
-.content-info__description--color-green-darken-1 {
-  @apply text-green-darken-1;
-}
-
-.content-info__title--color-green,
-.content-info__subtitle--color-green,
-.content-info__description--color-green {
-  @apply text-green;
-}
-
-.content-info__title--color-green-lighten-1,
-.content-info__subtitle--color-green-lighten-1,
-.content-info__description--color-green-lighten-1 {
-  @apply text-green-lighten-1;
-}
-
-.content-info__title--color-green-lighten-2,
-.content-info__subtitle--color-green-lighten-2,
-.content-info__description--color-green-lighten-2 {
-  @apply text-green-lighten-2;
-}
-
-/* Yellow color */
-.content-info__title--color-yellow-darken-2,
-.content-info__subtitle--color-yellow-darken-2,
-.content-info__description--color-yellow-darken-2 {
-  @apply text-yellow-darken-2;
-}
-
-.content-info__title--color-yellow-darken-1,
-.content-info__subtitle--color-yellow-darken-1,
-.content-info__description--color-yellow-darken-1 {
-  @apply text-yellow-darken-1;
-}
-
-.content-info__title--color-yellow,
-.content-info__subtitle--color-yellow,
-.content-info__description--color-yellow {
-  @apply text-yellow;
-}
-
-.content-info__title--color-yellow-lighten-1,
-.content-info__subtitle--color-yellow-lighten-1,
-.content-info__description--color-yellow-lighten-1 {
-  @apply text-yellow-lighten-1;
-}
-
-.content-info__title--color-yellow-lighten-2,
-.content-info__subtitle--color-yellow-lighten-2,
-.content-info__description--color-yellow-lighten-2 {
-  @apply text-yellow-lighten-2;
-}
-
-/* Purple color */
-.content-info__title--color-purple-darken-2,
-.content-info__subtitle--color-purple-darken-2,
-.content-info__description--color-purple-darken-2 {
-  @apply text-purple-darken-2;
-}
-
-.content-info__title--color-purple,
-.content-info__subtitle--color-purple,
-.content-info__description--color-purple {
-  @apply text-purple;
-}
-
-.content-info__title--color-pillar-blue,
-.content-info__subtitle--color-pillar-blue,
-.content-info__description--color-pillar-blue {
-  @apply text-pillar-blue;
-}
-
-.content-info__title--color-pillar-orange,
-.content-info__subtitle--color-pillar-orange,
-.content-info__description--color-pillar-orange {
-  @apply text-pillar-orange;
-}
-
-.content-info__title--color-pillar-pink,
-.content-info__subtitle--color-pillar-pink,
-.content-info__description--color-pillar-pink {
-  @apply text-pillar-pink;
-}
-
-/* Caribe colors */
-.content-info__title--color-caribe-yellow,
-.content-info__subtitle--color-caribe-yellow,
-.content-info__description--color-caribe-yellow {
-  @apply text-caribe-yellow;
-}
-
-
-.content-info__title--color-caribe-blue,
-.content-info__subtitle--color-caribe-blue,
-.content-info__description--color-caribe-blue {
-  @apply text-caribe-blue;
-}
-
-.content-info__title--color-caribe-green,
-.content-info__subtitle--color-caribe-green,
-.content-info__description--color-caribe-green {
-  @apply text-caribe-green;
-}
-
-.content-info__title--color-caribe-red,
-.content-info__subtitle--color-caribe-red,
-.content-info__description--color-caribe-red {
-  @apply text-caribe-red;
 }
 
 /* =============== */

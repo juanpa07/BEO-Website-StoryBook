@@ -117,6 +117,15 @@ Las importaciones de utilidades de test vienen de `storybook/test` (`expect`, `f
 | `@enums` | `src/enums` |
 
 
+## Estilos CSS de componentes
+
+Para **crear, revisar o corregir** archivos `.css` de componentes (incluyendo colores, tamaños,
+tipografías, variantes BEM y uso correcto de Tailwind 4 en Shadow DOM),
+consulta siempre el skill: `@.claude/skills/tailwind-css-builder/SKILL.md`
+
+El CSS de referencia canónica del proyecto es:
+`src/stories/atoms/cc-button/cc-button.css`
+
 ## Storybook Stories
 
 Para **crear un story nuevo** o **migrar uno existente** a la convención actual,
